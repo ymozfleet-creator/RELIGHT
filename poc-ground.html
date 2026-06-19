@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PoC Ground Tokyo 成果報告｜平和島 多世代型シェアモビリティ実証 — ARK株式会社</title>
+
+<meta name="description" content="東京都「PoC Ground Tokyo」採択。合同会社Limot／ARKが平和島で多世代型シェアモビリティを実証。4項目中3項目でKPI達成（満足度4.5、自力操作完了率ほぼ100%）。京急電鉄連携。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+  --ink:#1a160f;--ink-2:#403a2e;--ink-soft:#6e6757;--faint:#a59c89;
+
+  --washi:#f5f2ea;--washi-2:#ece7da;--washi-3:#e2dccb;
+
+  --sumi:#1a160f;--sumi-2:#252016;
+
+  --shu:#c33a26;--shu-deep:#a02d1c;--shu-bright:#dd4a30;
+
+  --line:rgba(26,22,15,.13);--line-strong:rgba(26,22,15,.3);--line-washi:rgba(245,242,234,.14);
+
+  --mincho:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+
+  --grotesk:'Space Grotesk','Noto Sans JP',sans-serif;
+
+  --sans:'Noto Sans JP',sans-serif;--mono:'Space Mono',monospace;
+
+  --max:820px;--wide:1100px;--ease:cubic-bezier(.19,1,.22,1);
+
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{font-family:var(--sans);background:var(--washi);color:var(--ink-2);line-height:1.95;letter-spacing:.012em;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+h1,h2{font-family:var(--mincho);color:var(--ink);font-weight:800;line-height:1.45;letter-spacing:.03em}
+
+a{color:inherit;text-decoration:none}
+
+figure{margin:0}
+
+.lead-fig{margin:clamp(-2rem,-4vw,-3.5rem) auto clamp(2.5rem,5vw,4rem);position:relative;z-index:5;max-width:var(--wide);padding:0 clamp(1.4rem,5vw,2rem)}
+
+.photo{width:100%;aspect-ratio:3/2;object-fit:cover;border:1px solid var(--line);border-radius:3px;display:block;background:var(--washi-2)}
+
+figcaption{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--ink-soft);margin-top:.8rem;text-align:center}
+
+.in-fig{margin:1.8rem 0}
+
+::selection{background:var(--shu);color:var(--washi)}
+
+:focus-visible{outline:2px solid var(--shu);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(1.4rem,5vw,2rem)}
+
+.wide{max-width:var(--wide);margin:0 auto;padding:0 clamp(1.4rem,5vw,2rem)}
+
+.eyebrow{font-family:var(--grotesk);font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--shu-bright);display:inline-flex;align-items:center;gap:.8em}
+
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--shu-bright)}
+
+header{position:fixed;top:0;width:100%;z-index:100;background:rgba(245,242,234,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:var(--wide);margin:0 auto;padding:0 clamp(1.4rem,5vw,2rem)}
+
+.logo{font-family:var(--mincho);font-weight:800;font-size:1.4rem;letter-spacing:.2em;color:var(--ink);display:flex;align-items:baseline}
+
+.logo .dot{color:var(--shu);margin-left:.04em}
+
+.back{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--ink);display:inline-flex;align-items:center;gap:.5em;transition:gap .3s var(--ease),color .3s var(--ease)}
+
+.back:hover{gap:.9em;color:var(--shu)}
+
+.ah{background:var(--sumi);color:var(--washi);padding:calc(66px + clamp(3rem,7vw,5rem)) 0 clamp(3rem,7vw,5rem);position:relative;overflow:hidden}
+
+.ah .kanji{position:absolute;right:-3vw;bottom:-14vw;font-family:var(--mincho);font-weight:800;font-size:36vw;color:var(--washi);opacity:.03;line-height:.7;pointer-events:none}
+
+.ah .wrap{position:relative;z-index:2}
+
+.ah .crumb{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--faint);margin-bottom:1.6rem}
+
+.ah .crumb a:hover{color:var(--shu-bright)}
+
+.ah h1{color:var(--washi);font-size:clamp(1.8rem,4.2vw,2.9rem);line-height:1.45;margin:1.4rem 0 1.3rem;letter-spacing:.03em}
+
+.ah .dek{font-size:clamp(.98rem,1.5vw,1.12rem);color:#cabfae;line-height:2.05;max-width:52ch}
+
+.meta-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-washi);border:1px solid var(--line-washi);margin-top:clamp(2.2rem,4vw,3rem)}
+
+.meta-bar div{background:var(--sumi);padding:1rem 1.1rem}
+
+.meta-bar dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--shu-bright);margin-bottom:.4rem}
+
+.meta-bar dd{font-size:.86rem;color:var(--washi);font-weight:500}
+
+.article{padding:clamp(3.5rem,7vw,5.5rem) 0 clamp(4rem,8vw,6rem)}
+
+.section{margin-bottom:clamp(2.8rem,5vw,3.8rem)}
+
+.section .lab{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--shu);margin-bottom:1rem}
+
+.section h2{font-size:clamp(1.4rem,2.8vw,1.9rem);line-height:1.5;margin-bottom:1.1rem}
+
+.section p{font-size:1rem;line-height:2.15;color:var(--ink-2);margin-bottom:1.1rem}
+
+.section p:last-child{margin-bottom:0}
+
+.section strong{color:var(--ink);font-weight:700}
+
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:1.6rem 0;overflow:hidden}
+
+.kpi div{background:var(--washi-2);padding:1.5rem 1rem;text-align:center;position:relative}
+
+.kpi .st{position:absolute;top:.8rem;right:.8rem;font-family:var(--grotesk);font-size:.56rem;font-weight:700;letter-spacing:.06em;padding:.2em .55em;border-radius:2px}
+
+.kpi .st.ok{background:#2f6d44;color:#fff}
+
+.kpi .st.ng{background:var(--shu);color:#fff}
+
+.kpi .lab2{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;color:var(--ink-soft);text-transform:uppercase;display:block;text-align:left}
+
+.kpi .num{font-family:var(--mincho);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.3rem);color:var(--ink);line-height:1;margin-top:.9rem}
+
+.kpi .num em{font-style:normal;font-size:.42em;color:var(--shu)}
+
+.kpi .sub{font-size:.72rem;color:var(--ink-soft);line-height:1.55;margin-top:.6rem}
+
+.simple-list{margin:1.2rem 0 0;border-top:1px solid var(--line)}
+
+.simple-list li{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+
+.simple-list .n{font-family:var(--mono);font-size:.82rem;color:var(--shu);font-weight:700}
+
+.simple-list b{font-family:var(--mincho);font-weight:700;color:var(--ink);font-size:1rem}
+
+.simple-list span.tx{font-size:.92rem;color:var(--ink-2);display:block;margin-top:.15rem;line-height:1.75}
+
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
+
+.vc{background:var(--washi-2);border:1px solid var(--line);padding:1.4rem}
+
+.vc .who{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--shu);margin-bottom:.7rem}
+
+.vc .qt{font-family:var(--mincho);font-weight:700;color:var(--ink);font-size:.98rem;line-height:1.7}
+
+.endcta{background:var(--sumi);color:var(--washi);padding:clamp(3rem,6vw,4.5rem) 0;text-align:center;position:relative;overflow:hidden}
+
+.endcta .kanji{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--mincho);font-weight:800;font-size:26vw;color:var(--washi);opacity:.03;pointer-events:none}
+
+.endcta .wrap{position:relative;z-index:2}
+
+.endcta h2{color:var(--washi);font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:1rem;line-height:1.5}
+
+.endcta h2 em{font-style:normal;color:var(--shu-bright)}
+
+.endcta p{color:#cabfae;font-size:.96rem;max-width:40ch;margin:0 auto 1.8rem}
+
+.mail-btn{display:inline-flex;align-items:center;gap:.8em;background:var(--shu);color:var(--washi);font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;padding:1em 1.9em;transition:transform .35s var(--ease),background .35s var(--ease)}
+
+.mail-btn:hover{transform:translateY(-2px);background:var(--shu-bright)}
+
+.endcta .home{display:inline-block;margin-top:1.5rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--faint)}
+
+.endcta .home:hover{color:var(--shu-bright)}
+
+footer{background:var(--sumi-2);color:var(--faint);padding:2.2rem 0}
+
+.fbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;max-width:var(--wide);margin:0 auto;padding:0 clamp(1.4rem,5vw,2rem)}
+
+.fbar .fl{font-family:var(--mincho);font-weight:800;letter-spacing:.2em;color:var(--washi);font-size:1.1rem}
+
+.fbar .fl .dot{color:var(--shu-bright)}
+
+.fbar .cp{font-family:var(--mono);font-size:.68rem}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:760px){.meta-bar{grid-template-columns:repeat(2,1fr)}.kpi{grid-template-columns:repeat(2,1fr)}.voices{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <a href="index.html" class="logo">ARK<span class="dot">.</span></a>
+
+    <a href="index.html" class="back">← トップへ戻る</a>
+
+  </div>
+
+</header>
+
+<section class="ah">
+
+  <div class="kanji" aria-hidden="true">繋</div>
+
+  <div class="wrap">
+
+    <div class="crumb"><a href="index.html">ARK</a> / News / PoC Ground Tokyo 成果報告</div>
+
+    <span class="eyebrow">Case — PoC Ground Tokyo 成果報告会 2026.06.03</span>
+
+    <h1>平和島で、多世代の「移動の自由」を。<br>4項目中3項目でKPIを達成しました。</h1>
+
+    <p class="dek">東京都「PoC Ground Tokyo」採択。合同会社Limot／ARKが、高齢者を含む多世代が使える居住地型シェアモビリティを平和島で実証。京急電鉄と連携し、現場で「本当に使われるか」を確かめました。</p>
+
+    <dl class="meta-bar">
+
+      <div><dt>採択</dt><dd>東京都 PoC Ground Tokyo</dd></div>
+
+      <div><dt>実証期間</dt><dd>2026.3.23 – 4.17</dd></div>
+
+      <div><dt>場所 / 連携</dt><dd>大田区平和島 / 京急電鉄</dd></div>
+
+      <div><dt>ARKの役割</dt><dd>事業支援・実証設計</dd></div>
+
+    </dl>
+
+  </div>
+
+</section>
+
+<div class="lead-fig">
+
+  <figure>
+
+    <img class="photo" src="" alt="PoC Ground Tokyo 成果報告会での登壇（2026.06.03）">
+
+    <figcaption>東京都「PoC Ground Tokyo」成果報告会での登壇（2026.06.03）</figcaption>
+
+  </figure>
+
+</div>
+
+<article class="article">
+
+  <div class="wrap">
+
+    <div class="section rv">
+
+      <div class="lab">01 — 背景</div>
+
+      <h2>世代を問わない「移動の不便」を解く。</h2>
+
+      <p>実証地は、大田区の交通政策計画でも示される「交通不便地帯」。路線バスから外れ、徒歩での生活が難しい地域です。一方で高齢化は進み、既存のシェアモビリティはスマホ前提・若者向け。そこで、<strong>高齢者を含む多世代が使える居住地型のシェアモビリティ</strong>が成立するかを検証しました。</p>
+
+    </div>
+
+    <div class="section rv">
+
+      <div class="lab">02 — 取組内容</div>
+
+      <h2>「使う人を選ばない」設計に。</h2>
+
+      <p>WHILL（4輪小型モビリティ）3台と子ども乗せ電動アシスト自転車1台を、都営住宅前に常設。免許・スマホ・年齢を問わず使えるよう、4つの設計を徹底しました。</p>
+
+      <ul class="simple-list">
+
+        <li><span class="n">01</span><span><b>免許不要・安全設計</b><span class="tx">WHILLは時速6km以下で免許不要。高齢者にも安心の安定走行。</span></span></li>
+
+        <li><span class="n">02</span><span><b>現金OK（スマホ不要）</b><span class="tx">オンライン・現金・定期券の3方式。Limot×京急で全国初のカプセルトイ決済を実装。</span></span></li>
+
+        <li><span class="n">03</span><span><b>多世代対応・拠点設置型</b><span class="tx">子どもから高齢者まで。生活動線上の都営住宅前に常設。</span></span></li>
+
+        <li><span class="n">04</span><span><b>地域連携</b><span class="tx">京急プレミアポイント連携、信用組合・町会での周知で日常に溶け込ませた。</span></span></li>
+
+      </ul>
+
+    </div>
+
+    <div class="section rv">
+
+      <div class="lab">03 — 成果</div>
+
+      <h2>4項目中、3項目でKPIを達成。</h2>
+
+      <div class="kpi">
+
+        <div><span class="st ok">達成</span><span class="lab2">① 満足度</span><div class="num">4.5<em>/5.0</em></div><div class="sub">KPI 4.0以上<br>自転車利用者は満点5.0</div></div>
+
+        <div><span class="st ng">未達</span><span class="lab2">② 利用回数</span><div class="num">35<em>回/月</em></div><div class="sub">KPI 50回/月<br>実証後も継続増加中</div></div>
+
+        <div><span class="st ok">達成</span><span class="lab2">③ 自力操作</span><div class="num">≒100<em>%</em></div><div class="sub">KPI 80%以上<br>予約・決済すべて自力</div></div>
+
+        <div><span class="st ok">達成</span><span class="lab2">④ 外出促進</span><div class="num">5<em>箇所+</em></div><div class="sub">主要動線を<br>GPSで可視化</div></div>
+
+      </div>
+
+      <p>「歩くには遠い距離を、もう一歩先まで行ってもらえる」——資料の中だけでは得られない、現場でしか掴めない手応えがありました。</p>
+
+      <figure class="in-fig">
+
+        <img class="photo" src="" alt="PoC Ground Tokyo 成果報告会 参加メンバーとの集合写真">
+
+        <figcaption>PoC Ground Tokyo 成果報告会にて（採択事業者・関係者の皆様と）</figcaption>
+
+      </figure>
+
+    </div>
+
+    <div class="section rv">
+
+      <div class="lab">04 — 利用者の声</div>
+
+      <h2>世代を超えて、確かな手応え。</h2>
+
+      <div class="voices">
+
+        <div class="vc"><div class="who">30代女性 ／ 自転車</div><div class="qt">「保育園送迎にも使える」「公園まで気軽に行けるように」</div></div>
+
+        <div class="vc"><div class="who">50代男性 ／ WHILL</div><div class="qt">「免許なしで乗れて助かる」「足の負担なく買い物に」</div></div>
+
+        <div class="vc"><div class="who">40代女性 ／ 自転車</div><div class="qt">「子どもの送迎に便利」「車を出さなくて済む」</div></div>
+
+      </div>
+
+    </div>
+
+    <div class="section rv">
+
+      <div class="lab">05 — 今後</div>
+
+      <h2>東京モデルを、全国の交通空白地帯へ。</h2>
+
+      <p>〜2026年度に東京モデルを完成させ大田区で実装フェーズへ。2027年度に京急沿線・他自治体へ面展開、2028年以降は全国の移動困難地域へ——UR・JKK等への外販も視野に、社会実装を加速させます。</p>
+
+    </div>
+
+  </div>
+
+</article>
+
+<section class="endcta">
+
+  <div class="kanji" aria-hidden="true">繋</div>
+
+  <div class="wrap">
+
+    <h2>移動の自由を、<br><em>すべての人へ。</em></h2>
+
+    <p>あなたの地域・事業でも、現場での実証から始めませんか。</p>
+
+    <a href="mailto:kanri@mycoach-myteam.com" class="mail-btn">お問い合わせ <span>↗</span></a>
+
+    <div><a href="index.html" class="home">← ARK トップへ戻る</a></div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="fbar">
+
+    <span class="fl">ARK<span class="dot">.</span></span>
+
+    <span class="cp">© 2026 ARK Inc. All Rights Reserved.</span>
+
+  </div>
+
+</footer>
+
+<script>
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+</script>
+
+</body>
+
+</html>
