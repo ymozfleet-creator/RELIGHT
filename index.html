@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARK株式会社 — 経験と知恵を、次世代へ繋ぐ。</title>
-<meta name="description" content="ARK株式会社は、トヨタで培った現場改善のノウハウと新規事業開発の経験で、あなたのビジネスを次のステージへ。唯一無二の経験を次世代へ繋ぐ、コンサルティング・アプリ開発・セミナー事業。東京・中野。">
-<meta property="og:title" content="ARK株式会社 — 経験と知恵を、次世代へ繋ぐ。">
+<title>RELIGHT inc. — 経験と知恵を、次世代へ繋ぐ。</title>
+<meta name="description" content="RELIGHTは、トヨタで培った現場改善のノウハウと新規事業開発の経験で、あなたのビジネスを次のステージへ。唯一無二の経験を次世代へ繋ぐ、コンサルティング・アプリ開発・セミナー事業。東京・中野。">
+<meta property="og:title" content="RELIGHT inc. — 経験と知恵を、次世代へ繋ぐ。">
 <meta property="og:description" content="唯一無二の経験を、財産に。トヨタの現場力と新規事業開発の経験で、あなたのビジネスを次のステージへ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +40,12 @@ ul{list-style:none}
 header{position:fixed;top:0;width:100%;z-index:100;transition:background .5s var(--ease),border-color .5s var(--ease);border-bottom:1px solid transparent}
 header.scr{background:rgba(245,242,234,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
-.logo{font-family:var(--mincho);font-weight:800;font-size:1.6rem;letter-spacing:.2em;color:var(--ink);display:flex;align-items:baseline}
-.logo .dot{color:var(--shu);margin-left:.04em}
+.logo{font-family:var(--grotesk);color:var(--ink);text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;line-height:.9}
+.logo .wm{font-weight:700;font-size:1.3rem;letter-spacing:.05em;display:inline-flex;align-items:flex-end;position:relative;white-space:nowrap}
+.logo .ig{position:relative;display:inline-block}
+.logo .flame{position:absolute;left:50%;top:-.66em;transform:translateX(-50%);width:.36em;height:.82em}
+.logo .sub{font-weight:600;font-size:.5rem;letter-spacing:.5em;padding-left:.5em;margin-top:.18em}
+.logo.on-dark{color:var(--washi)}
 .nav-links{display:flex;align-items:center;gap:clamp(1.4rem,2.4vw,2.5rem)}
 .nav-links a{font-size:.82rem;font-weight:500;color:var(--ink);letter-spacing:.04em;position:relative;padding:.4em 0}
 .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--shu);transition:width .4s var(--ease)}
@@ -178,8 +182,9 @@ a.nitem:hover .ar{color:var(--shu)}
 
 footer{background:var(--sumi-2);color:var(--faint);padding:3rem 0}
 .fbar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
-.fbar .fl{font-family:var(--mincho);font-weight:800;letter-spacing:.2em;color:var(--washi);font-size:1.3rem}
-.fbar .fl .dot{color:var(--shu-bright)}
+.fbar .fl{margin:0}
+.fbar .fl .wm{font-size:1.02rem}
+.fbar .fl .sub{font-size:.42rem}
 .fbar .cp{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em}
 
 .rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
@@ -226,7 +231,7 @@ footer{background:var(--sumi-2);color:var(--faint);padding:3rem 0}
 <header id="hd">
   <div class="wrap">
     <nav class="nav">
-      <a href="#top" class="logo">ARK<span class="dot">.</span></a>
+      <a href="#top" class="logo" aria-label="RELIGHT inc."><span class="wm">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#c4762f"/></svg></span>GHT</span><span class="sub">INC.</span></a>
       <ul class="nav-links" id="nl">
         <li><a href="#message">Message</a></li>
         <li><a href="#mvv">MVV</a></li>
@@ -245,7 +250,7 @@ footer{background:var(--sumi-2);color:var(--faint);padding:3rem 0}
 <section class="hero" id="top">
   <div class="hero-mark" aria-hidden="true">繋</div>
   <div class="wrap">
-    <span class="eyebrow">ARK Inc. — 経験を、次世代へ</span>
+    <span class="eyebrow">RELIGHT INC. — 経験を、次世代へ</span>
     <h1 class="hl">
       <span class="row"><span>経験と知恵を、</span></span>
       <span class="row"><span><em>次世代へ繋ぐ</em>。</span></span>
@@ -428,12 +433,12 @@ footer{background:var(--sumi-2);color:var(--faint);padding:3rem 0}
         <div class="motto"><div class="l">座右の銘 / Motto</div><p>本気の失敗には、<br>価値がある。</p></div>
       </div>
       <div class="about-body rv d2">
-        <p class="vis">トヨタ自動車で、法人共創事業やエネルギーマネジメント事業の立ち上げ、<br>国内市場の中長期企画に従事。その後モビリティ事業に飛び込み、<br><b>「現場でやり切ること」</b>の難しさと面白さを知りました。<br><br>私が信じているのは、一人ひとりの経験には、<br>必ず誰かの未来を照らすチカラがあるということ。<br>ARKは、その経験を次世代へ繋ぐ会社です。<br>机上の正しさより、現場の手応えを。あなたの挑戦に、最後まで寄り添います。</p>
+        <p class="vis">トヨタ自動車で、法人共創事業やエネルギーマネジメント事業の立ち上げ、<br>国内市場の中長期企画に従事。その後モビリティ事業に飛び込み、<br><b>「現場でやり切ること」</b>の難しさと面白さを知りました。<br><br>私が信じているのは、一人ひとりの経験には、<br>必ず誰かの未来を照らすチカラがあるということ。<br>RELIGHTは、その経験を次世代へ繋ぐ会社です。<br>机上の正しさより、現場の手応えを。あなたの挑戦に、最後まで寄り添います。</p>
         <div class="tl-l">Career</div>
         <div class="tl-row"><span class="yr">2015</span><span class="d"><b>立教大学 卒業 ／ トヨタ自動車 入社</b><span>法人共創事業・エネルギーマネジメント事業の立ち上げ、国内市場の中長期企画などに従事。</span></span></div>
         <div class="tl-row"><span class="yr">2024</span><span class="d"><b>モビリティ事業 立ち上げ</b><span>立ち上げメンバーとして、モビリティサービス事業へ。</span></span></div>
         <div class="tl-row"><span class="yr">2025</span><span class="d"><b>個人事業主として独立</b><span>経験を次世代へ繋ぐべく独立。コンサル・開発・セミナー事業を開始。</span></span></div>
-        <div class="tl-row"><span class="yr">2027</span><span class="d"><b>ARK株式会社（ARK inc.）設立</b><span>法人化し、さらなる事業拡大へ。</span></span></div>
+        <div class="tl-row"><span class="yr">2027</span><span class="d"><b>RELIGHT inc. 設立</b><span>法人化し、さらなる事業拡大へ。</span></span></div>
       </div>
     </div>
   </div>
@@ -446,9 +451,9 @@ footer{background:var(--sumi-2);color:var(--faint);padding:3rem 0}
       <div class="rv">
         <span class="idx" style="display:block;margin-bottom:1.6rem">05 — Company</span>
         <dl class="company-rows">
-          <div class="crow"><dt>社名</dt><dd>ARK株式会社（ARK Inc.）</dd></div>
+          <div class="crow"><dt>社名</dt><dd>RELIGHT inc.</dd></div>
           <div class="crow"><dt>代表</dt><dd>代表取締役 茂住 雄太</dd></div>
-          <div class="crow"><dt>設立</dt><dd>2025年11月</dd></div>
+          <div class="crow"><dt>沿革</dt><dd>2025年11月 開業 ／ 2027年 法人化</dd></div>
           <div class="crow"><dt>所在地</dt><dd>〒165-0023<br>東京都中野区江原町2-13-13</dd></div>
           <div class="crow"><dt>事業内容</dt><dd>コンサルティング事業<br>アプリ開発・運営事業<br>セミナー事業</dd></div>
         </dl>
@@ -466,8 +471,8 @@ footer{background:var(--sumi-2);color:var(--faint);padding:3rem 0}
 <footer>
   <div class="wrap">
     <div class="fbar">
-      <span class="fl">ARK<span class="dot">.</span></span>
-      <span class="cp">© 2026 ARK Inc. All Rights Reserved.</span>
+      <span class="fl logo on-dark" aria-label="RELIGHT inc."><span class="wm">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#c4762f"/></svg></span>GHT</span><span class="sub">INC.</span></span>
+      <span class="cp">© 2026 RELIGHT inc. All Rights Reserved.</span>
     </div>
   </div>
 </footer>
