@@ -1,4 +1,3 @@
-<!-- deploy trigger -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -231,6 +230,12 @@ a.nitem:hover .ar{transform:translateX(6px);color:var(--cu2)}
 .contact-card h2 em{font-style:normal;background:var(--cu-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .contact-card p{font-size:.92rem;color:var(--tx2);max-width:38ch;margin-bottom:1.8rem}
 .mail-btn{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.9em;background:var(--cu);color:#0e0b07;font-family:var(--mono);font-size:.8rem;font-weight:700;letter-spacing:.06em;padding:1.05em 1.9em;border-radius:2px;transition:background .3s var(--ease),transform .3s var(--ease)}
+.contact-actions{position:relative;z-index:2;display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.copy-btn{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--tx);background:transparent;border:1px solid var(--line-2);border-radius:2px;padding:1.02em 1.5em;cursor:pointer;transition:border-color .3s var(--ease),color .3s var(--ease),background .3s var(--ease)}
+.copy-btn:hover{border-color:var(--cu);color:var(--cu2)}
+.copy-btn.done{border-color:var(--cu);color:var(--cu2);background:rgba(196,118,47,.1)}
+.mail-addr{position:relative;z-index:2;display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.02em;color:var(--tx2);border-bottom:1px solid var(--line-2);padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease)}
+.mail-addr:hover{color:var(--cu2);border-color:var(--cu)}
 .mail-btn:hover{background:var(--cu2);transform:translateY(-2px)}
 
 /* ============ FOOTER ============ */
@@ -503,7 +508,7 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;background:var(--bg0)}
         <div class="tl-l">Career</div>
         <div class="tl-row"><span class="yr">2015</span><span class="d"><b>立教大学 卒業 ／ トヨタ自動車 入社</b><span>法人共創事業・エネルギーマネジメント事業の立ち上げ、国内市場の中長期企画などに従事。</span></span></div>
         <div class="tl-row"><span class="yr">2024</span><span class="d"><b>モビリティ事業 立ち上げ</b><span>立ち上げメンバーとして、モビリティサービス事業へ。</span></span></div>
-        <div class="tl-row"><span class="yr">2025</span><span class="d"><b>RELIGHT 設立</b><span>独立し、コンサル・開発・セミナー事業を開始。</span></span></div>
+        <div class="tl-row"><span class="yr">2025</span><span class="d"><b>RELGHT立ち上げ</b><span>コンサル・開発・セミナー事業を開始。</span></span></div>
       </div>
     </div>
   </div>
@@ -516,7 +521,7 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;background:var(--bg0)}
       <div class="rv">
         <span class="lab" style="display:inline-flex;margin-bottom:1.8rem">Company</span>
         <dl class="company-rows">
-          <div class="crow"><dt>社名</dt><dd>RELIGHT </dd></div>
+          <div class="crow"><dt>社名</dt><dd>RELIGHT</dd></div>
           <div class="crow"><dt>代表</dt><dd>代表取締役 茂住 雄太</dd></div>
           <div class="crow"><dt>沿革</dt><dd>2025年11月 開業 </dd></div>
           <div class="crow"><dt>所在地</dt><dd>〒165-0023<br>東京都中野区江原町2-13-13</dd></div>
@@ -527,7 +532,11 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;background:var(--bg0)}
         <span class="lab">Contact</span>
         <h2>まずは、<br><em>お気軽にご相談を。</em></h2>
         <p>事業のこと、サービスのこと、どんな小さなことでも構いません。一緒に考えるところから始めましょう。</p>
-        <a href="mailto:kanri@mycoach-myteam.com" class="mail-btn">メールを送る <span>↗</span></a>
+        <div class="contact-actions">
+          <a href="mailto:kanri@mycoach-myteam.com?subject=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%88RELIGHT%20inc.%EF%BC%89" class="mail-btn">メールを送る <span>↗</span></a>
+          <button type="button" class="copy-btn" data-copy="kanri@mycoach-myteam.com">アドレスをコピー</button>
+        </div>
+        <a class="mail-addr" href="mailto:kanri@mycoach-myteam.com">kanri@mycoach-myteam.com</a>
       </div>
     </div>
   </div>
@@ -564,6 +573,16 @@ const co=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)ret
   requestAnimationFrame(step);
 });},{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+/* copy email */
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click',async()=>{
+    const t=btn.dataset.copy, orig=btn.textContent;
+    try{await navigator.clipboard.writeText(t);}
+    catch(e){const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(_){}ta.remove();}
+    btn.textContent='コピーしました ✓';btn.classList.add('done');
+    setTimeout(()=>{btn.textContent=orig;btn.classList.remove('done');},1800);
+  });
+});
 </script>
 </body>
 </html>
