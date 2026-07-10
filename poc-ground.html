@@ -127,6 +127,12 @@ figcaption{font-family:var(--mono);font-size:.7rem;letter-spacing:.03em;color:va
 .btn.solid:hover{background:var(--cu2);transform:translateY(-2px)}
 .endcta .home{display:inline-block;margin-top:1.6rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:var(--mut)}
 .endcta .home:hover{color:var(--cu2)}
+.contact-actions{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:center}
+.copy-btn{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--tx);background:transparent;border:1px solid var(--line-2);border-radius:2px;padding:1.02em 1.5em;cursor:pointer;transition:border-color .3s var(--ease),color .3s var(--ease),background .3s var(--ease)}
+.copy-btn:hover{border-color:var(--cu);color:var(--cu2)}
+.copy-btn.done{border-color:var(--cu);color:var(--cu2);background:rgba(196,118,47,.1)}
+.mail-addr{display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.02em;color:var(--tx2);border-bottom:1px solid var(--line-2);padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease)}
+.mail-addr:hover{color:var(--cu2);border-color:var(--cu)}
 
 /* footer */
 footer{border-top:1px solid var(--line);padding:2.4rem 0;background:var(--bg0)}
@@ -243,7 +249,11 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;background:var(--bg0)}
   <div class="wrap">
     <h2>移動の自由を、<em>すべての人へ。</em></h2>
     <p>あなたの地域・事業でも、現場での実証から始めませんか。</p>
-    <a href="mailto:kanri@mycoach-myteam.com" class="btn solid">お問い合わせ ↗</a>
+    <div class="contact-actions">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kanri@mycoach-myteam.com&su=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%88RELIGHT%20inc.%EF%BC%89" class="btn solid" target="_blank" rel="noopener">お問い合わせ ↗</a>
+      <button type="button" class="copy-btn" data-copy="kanri@mycoach-myteam.com">アドレスをコピー</button>
+    </div>
+    <a class="mail-addr" href="mailto:kanri@mycoach-myteam.com">kanri@mycoach-myteam.com</a>
     <div><a href="index.html" class="home">← RELIGHT トップへ戻る</a></div>
   </div>
 </section>
@@ -260,6 +270,15 @@ const hd=document.getElementById('hd');
 addEventListener('scroll',()=>hd.classList.toggle('scr',scrollY>40),{passive:true});
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click',async()=>{
+    const t=btn.dataset.copy, orig=btn.textContent;
+    try{await navigator.clipboard.writeText(t);}
+    catch(e){const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(_){}ta.remove();}
+    btn.textContent='コピーしました ✓';btn.classList.add('done');
+    setTimeout(()=>{btn.textContent=orig;btn.classList.remove('done');},1800);
+  });
+});
 </script>
 </body>
 </html>
