@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ymozfleet-creator.github.io/RELIGHT/sitemap.xml
