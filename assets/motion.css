@@ -1,0 +1,125 @@
+/* =========================================================
+   RELIGHT — Readability & Motion layer (2026-11)
+   各ページの <style> の後に読み込み、可読性とアニメーションを上書きする
+   ========================================================= */
+
+/* ---------- 1. Readability（ライトテーマ） ---------- */
+html:not([data-theme="dark"]){
+  --tx:#111827;
+  --tx2:#323a4b;      /* 本文：旧 #4c5566 → コントラスト強化 */
+  --mut:#5f6779;      /* 補足：旧 #8990a1 → WCAG AA 相当へ */
+  --line:rgba(17,24,39,.11);
+  --line-2:rgba(17,24,39,.18);
+}
+html[data-theme="dark"]{
+  --tx2:#ddd5c4;
+  --mut:#a99f8a;
+}
+body{font-weight:400!important;font-size:16px}
+p,li,dd{font-weight:400}
+b,strong{font-weight:700}
+/* 小さすぎるラベル類を底上げ */
+.lab{font-size:.76rem!important;font-weight:700}
+.en,.s,.goal,.k{letter-spacing:.06em}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  p{line-height:1.95}
+}
+
+/* ---------- 2. Scroll progress ---------- */
+.mx-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:999;pointer-events:none;
+  background:var(--cu-grad,linear-gradient(90deg,#6f8cf5,#5e5ce0));
+  transform:scaleX(var(--p,0));transform-origin:left;}
+
+/* ---------- 3. Kinetic Typography ---------- */
+.kt{--kt-step:28ms}
+.kt .kt-w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.kt .kt-c{display:inline-block;transform:translateY(105%) rotate(4deg);opacity:0;
+  transition:transform .9s cubic-bezier(.19,1,.22,1),opacity .6s ease;
+  transition-delay:calc(var(--i) * var(--kt-step) + var(--kt-base,0ms));will-change:transform}
+.kt.kt-in .kt-c{transform:none;opacity:1}
+/* グラデーション文字は塊で動かす（グラデ崩れ防止） */
+.kt em.kt-c,.kt .cu-t.kt-c{display:inline-block}
+
+/* グラデーション文字のゆるやかな流れ */
+.hero h1 em,.msg-big em,.mvv-content .big em,.contact-card h2 em,h1 em,h2 em{
+  background-size:220% 100%!important;animation:mx-shine 7s ease-in-out infinite alternate}
+@keyframes mx-shine{from{background-position:0% 50%}to{background-position:100% 50%}}
+
+/* ---------- 4. Reveal を上質に ---------- */
+.rv{opacity:0;transform:translateY(28px);filter:blur(6px);
+  transition:opacity .9s cubic-bezier(.19,1,.22,1),transform .9s cubic-bezier(.19,1,.22,1),filter .9s cubic-bezier(.19,1,.22,1)!important}
+.rv.in{opacity:1;transform:none;filter:none}
+.rv.d1{transition-delay:.08s!important}.rv.d2{transition-delay:.16s!important}.rv.d3{transition-delay:.24s!important}
+
+/* セクションラベルの◆が回転して現れる */
+.lab::before{transition:transform .9s cubic-bezier(.19,1,.22,1)}
+.rv .lab::before,.lab.rv::before{transform:rotate(-180deg) scale(.3)}
+.rv.in .lab::before,.lab.rv.in::before{transform:none}
+
+/* 見出し下のライン描画（インフォグラフィック的アクセント） */
+.shead h2,.sec h2.kt{position:relative}
+.shead h2::after{content:"";position:absolute;left:0;bottom:-.5rem;height:2px;width:2.4em;
+  background:var(--cu-grad);transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.19,1,.22,1) .35s}
+.shead h2.kt-in::after,.shead h2.in::after{transform:scaleX(1)}
+
+/* ---------- 5. UI/UX animation ---------- */
+/* カード：カーソル追従スポットライト + わずかな浮き上がり */
+.mx-spot{position:relative;isolation:isolate}
+.mx-spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(91,131,240,.12),transparent 60%);
+  transition:opacity .4s ease}
+.mx-spot:hover::after{opacity:1}
+.mx-spot{transition:transform .5s cubic-bezier(.19,1,.22,1),box-shadow .5s cubic-bezier(.19,1,.22,1),border-color .4s!important}
+.mx-spot:hover{transform:translateY(-6px);box-shadow:0 22px 48px -24px rgba(40,60,140,.35)}
+
+/* ボタン：マグネット + 光のスイープ */
+.mx-mag{position:relative;overflow:hidden;will-change:transform;transition:transform .35s cubic-bezier(.19,1,.22,1),background .3s,color .3s,border-color .3s,box-shadow .35s!important}
+.mx-mag::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .7s cubic-bezier(.19,1,.22,1)}
+.mx-mag:hover::before{left:130%}
+.mx-mag:hover{box-shadow:0 12px 28px -12px rgba(63,99,216,.55)}
+
+/* ニュース行：矢印がスライド＆背景が流れる */
+.nitem{position:relative;transition:background .4s,padding .4s cubic-bezier(.19,1,.22,1)!important}
+.nitem .ar{transition:transform .4s cubic-bezier(.19,1,.22,1)!important}
+.nitem:hover .ar{transform:translateX(6px)}
+
+/* ---------- 6. Infographic: 数字のカウントアップ下線 ---------- */
+.mx-num{position:relative;display:inline-block}
+.mx-num::after{content:"";position:absolute;left:0;right:0;bottom:-.35em;height:2px;border-radius:2px;
+  background:var(--cu-grad);transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.19,1,.22,1)}
+.mx-num.mx-done::after{transform:scaleX(1)}
+
+/* ---------- 7. Marquee（トップのキーワード帯） ---------- */
+.mx-marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg1);padding:1.15rem 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mx-marquee .track{display:flex;width:max-content;animation:mx-mq 38s linear infinite}
+.mx-marquee:hover .track{animation-play-state:paused}
+.mx-marquee span{font-family:var(--mincho);font-weight:700;font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--tx);white-space:nowrap;padding:0 1.6rem;display:inline-flex;align-items:center;gap:1.6rem}
+.mx-marquee span::after{content:"";width:.42em;height:.42em;background:var(--cu);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.mx-marquee span.o{color:var(--cu2)}
+@keyframes mx-mq{to{transform:translateX(-50%)}}
+
+/* ---------- 8. Hero のアンビエント光 ---------- */
+.mx-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:-1;opacity:.55;animation:mx-float 14s ease-in-out infinite alternate}
+.mx-orb.a{width:38vw;height:38vw;max-width:520px;max-height:520px;left:-8vw;top:8vh;background:radial-gradient(circle,rgba(111,140,245,.35),transparent 65%)}
+.mx-orb.b{width:30vw;height:30vw;max-width:420px;max-height:420px;right:-6vw;bottom:4vh;background:radial-gradient(circle,rgba(94,92,224,.28),transparent 65%);animation-delay:-6s}
+@keyframes mx-float{to{transform:translate(4vw,-3vh) scale(1.08)}}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1!important;transform:none!important;filter:none!important}
+  .kt .kt-c{transform:none!important;opacity:1!important;transition:none!important}
+  .mx-marquee .track,.mx-orb,h1 em,h2 em{animation:none!important}
+  .mx-progress{display:none}
+}
+
+/* ---------- 9. トップ：事業カード（2事業構成）の余白調整 ---------- */
+.svc-grid .svc h3{min-height:0!important}
+.svc-grid .svc p{min-height:0!important}
+.svc-grid .svc .foot{margin-top:auto!important;min-height:0!important}
+.svc .more{font-size:.84rem!important;font-weight:700}
+.svc .menu span{font-size:.78rem!important}
+
+@media (max-width:640px){.hero .scrollcue{display:none}}
