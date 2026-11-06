@@ -70,6 +70,7 @@ b,strong{color:var(--tx);font-weight:700}
 .nav a:hover::after{transform:scaleX(1)}
 .nav .cta{background:var(--ac);color:#fff!important;padding:.6em 1.3em;border-radius:999px;font-weight:700}
 .nav .cta:hover{background:#2649bd}
+.nav .cta::before{content:none}
 .burger{display:none;width:44px;height:44px;border:0;background:none;position:relative;cursor:pointer}
 .burger span{position:absolute;left:10px;right:10px;height:2px;background:var(--tx);transition:transform .3s var(--ease),top .3s var(--ease),opacity .2s}
 .burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:28px}
