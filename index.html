@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://ymozfleet-creator.github.io/RELIGHT/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="RELIGHT">
-<meta name="theme-color" content="#0e0b07">
+<meta name="theme-color" content="#05070f">
 <meta property="og:site_name" content="RELIGHT">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="RELIGHT｜経験と知恵を、次世代へ繋ぐ">
@@ -67,444 +67,172 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* ============ TOKENS ============ */
-:root{
-  --bg0:#ffffff;
-  --bg1:#f4f6fa;
-  --panel:#ffffff;
-  --panel-2:#f7f9fc;
-  --line:rgba(23,30,48,.10);
-  --line-2:rgba(23,30,48,.15);
-  --tx:#171d29;
-  --tx2:#4c5566;
-  --mut:#8990a1;
-  --cu:#3f63d8;
-  --cu2:#4f74e6;
-  --cu-grad:linear-gradient(115deg,#6f8cf5 0%,#5b83f0 45%,#5e5ce0 100%);
-  --mincho:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
-  --grot:'Space Grotesk','Noto Sans JP',sans-serif;
-  --sans:'Noto Sans JP',sans-serif;
-  --mono:'Space Mono',monospace;
-  --wide:1200px;
-  --ease:cubic-bezier(.19,1,.22,1);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);font-weight:300;background:var(--bg0);color:var(--tx2);line-height:2;letter-spacing:.01em;word-break:normal;word-break:auto-phrase;line-break:strict;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-h1,h2,h3{font-family:var(--mincho);color:var(--tx);font-weight:700;line-height:1.5;letter-spacing:.03em}
-a{color:inherit;text-decoration:none}
-img,svg{display:block}
-::selection{background:var(--cu);color:#fff}
-:focus-visible{outline:2px solid var(--cu2);outline-offset:3px}
-.wrap{max-width:var(--wide);margin:0 auto;padding:0 clamp(1.4rem,5vw,2.4rem)}
-.sec{padding:clamp(4.5rem,9vw,7.5rem) 0}
-b,strong{color:var(--tx);font-weight:600}
-
-/* labels */
-.lab{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cu2);display:inline-flex;align-items:center;gap:.9em}
-.lab::before{content:"";width:.5em;height:1.1em;background:var(--cu);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
-.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:clamp(2.2rem,5vw,3.4rem);flex-wrap:wrap}
-.shead h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-top:1rem}
-.shead .lead{max-width:36ch;font-size:.95rem;color:var(--mut);line-height:2}
-
-/* copper gradient text */
-.cu-t{background:var(--cu-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
-
-/* ============ HEADER ============ */
-header{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid transparent;transition:border-color .4s var(--ease)}
-header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.82);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px);opacity:0;transition:opacity .4s var(--ease)}
-header.scr{border-color:var(--line)}
-header.scr::before{opacity:1}
-.nav{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:var(--wide);margin:0 auto;padding:0 clamp(1.4rem,5vw,2.4rem)}
-.logo{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:.9;color:var(--tx)}
-.logo .wm{font-family:var(--grot);font-weight:700;font-size:1.32rem;letter-spacing:.06em;display:inline-flex;align-items:flex-end;position:relative;white-space:nowrap;line-height:1}
-.logo .ig{position:relative;display:inline-block}
-.logo .flame{position:absolute;left:50%;top:-.66em;transform:translateX(-50%);width:.36em;height:.82em}
-.logo .sub{font-family:var(--grot);font-weight:600;font-size:.5rem;letter-spacing:.52em;padding-left:.05em;margin-top:.22em;color:var(--mut)}
-.nav-links{display:flex;align-items:center;gap:clamp(1.2rem,2.4vw,2rem);list-style:none}
-.nav-links a{font-family:var(--sans);font-weight:400;font-size:.82rem;letter-spacing:.06em;color:var(--tx2);position:relative;padding:.3em 0;transition:color .3s var(--ease)}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--cu2);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
-.nav-links a:hover{color:var(--tx)}
-.nav-links a:hover::after{transform:scaleX(1)}
-.nav-links a.nav-cta{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.1em;background:var(--cu);color:#fff!important;padding:.75em 1.4em;border-radius:2px;transition:background .35s var(--ease),transform .35s var(--ease)}
-.nav-links a.nav-cta::after{display:none}
-.nav-links a.nav-cta:hover{background:var(--cu2);transform:translateY(-1px)}
-.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative;z-index:130}
-.burger span{position:absolute;left:10px;right:10px;height:2px;background:var(--tx);transition:transform .35s var(--ease),opacity .3s,top .35s var(--ease)}
-.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:27px}
-.burger.open span:nth-child(1){top:21px;transform:rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){top:21px;transform:rotate(-45deg)}
-
-/* ============ HERO ============ */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 1.4rem 90px;overflow:hidden;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(46% 40% at 50% 106%,rgba(91,131,240,.12),transparent 70%),radial-gradient(60% 48% at 50% -16%,#eef2fd,transparent 62%),var(--bg0)}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:
-  linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:min(9vw,110px) min(9vw,110px);
-  -webkit-mask-image:radial-gradient(60% 55% at 50% 45%,#000 0%,transparent 78%);
-  mask-image:radial-gradient(60% 55% at 50% 45%,#000 0%,transparent 78%)}
-.beam{width:2px;height:0;background:linear-gradient(180deg,var(--cu2),rgba(91,131,240,0));margin:0 auto 1.6rem;animation:beam 1.4s var(--ease) .2s forwards}
-@keyframes beam{to{height:clamp(52px,8vh,86px)}}
-.hero .flame-mark{width:22px;height:50px;margin:0 auto;filter:drop-shadow(0 0 14px rgba(224,145,63,.5));animation:fl 1s var(--ease) both}
-@keyframes fl{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-.hero .tagcat{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cu2);margin-bottom:1.9rem;animation:up 1s var(--ease) .35s both}
-.hero h1{font-size:clamp(1.4rem,6.4vw,5rem);white-space:nowrap;font-weight:800;line-height:1.3;letter-spacing:.03em;animation:up 1s var(--ease) .5s both}
-.hero h1 em{font-style:normal;background:var(--cu-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-sub{max-width:44em;font-size:clamp(.95rem,1.4vw,1.08rem);line-height:2.15;color:var(--tx2);margin-top:2rem;animation:up 1s var(--ease) .68s both}
-.hero-chips{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:2.4rem;animation:up 1s var(--ease) .82s both}
-.hero-chips a{font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.05em;color:var(--tx2);border:1px solid var(--line-2);padding:.6em 1.15em;border-radius:999px;display:inline-flex;align-items:center;gap:.7em;transition:border-color .3s var(--ease),color .3s var(--ease),background .3s var(--ease)}
-.hero-chips a i{font-style:normal;font-family:var(--mono);font-size:.66rem;color:var(--cu2)}
-.hero-chips a:hover{border-color:var(--cu);color:var(--tx);background:rgba(91,131,240,.10)}
-.hero-cta{display:flex;gap:1rem;justify-content:center;margin-top:2.6rem;flex-wrap:wrap;animation:up 1s var(--ease) .95s both}
-.btn{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.08em;padding:1.05em 1.9em;border-radius:2px;display:inline-flex;align-items:center;gap:.8em;transition:transform .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}
-.btn.solid{background:var(--cu);color:#fff}
-.btn.solid:hover{background:var(--cu2);transform:translateY(-2px)}
-.btn.ghost{border:1px solid var(--line-2);color:var(--tx)}
-.btn.ghost:hover{border-color:var(--cu);color:var(--cu2);transform:translateY(-2px)}
-@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.scrollcue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:.7em}
-.scrollcue i{width:1px;height:34px;background:linear-gradient(var(--cu2),transparent);animation:cue 2s var(--ease) infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-/* ============ STATS ============ */
-.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg1)}
-.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
-.stat{background:var(--bg1);padding:2.4rem 1.6rem;text-align:center}
-.stat .num{font-family:var(--grot);font-weight:600;font-size:clamp(2.3rem,4.6vw,3.4rem);line-height:1;background:var(--cu-grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.01em}
-.stat .num small{font-size:.42em;letter-spacing:.04em}
-.stat .t{font-size:.82rem;color:var(--tx2);margin-top:.9rem;font-weight:400}
-.stat .s{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--mut);margin-top:.35rem}
-
-/* ============ SERVICES ============ */
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
-.svc.aidx{text-decoration:none}
-.svc .newtag{position:absolute;top:1.5rem;right:1.5rem;font-family:var(--mono);font-size:.56rem;font-weight:700;letter-spacing:.14em;color:var(--cu2);border:1px solid rgba(224,145,63,.5);border-radius:999px;padding:.32em .8em;background:rgba(91,131,240,.08)}
-.svc .menu a.sublink{color:var(--cu2)}
-.photo-sec{background:var(--bg1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.photo-band{margin:0;display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:center}
-.photo-band img{width:100%;max-height:460px;object-fit:cover;border-radius:6px;border:1px solid var(--line-2)}
-.photo-band figcaption .lab{margin-bottom:1.1rem}
-.photo-band .pb-h{font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.55;margin-bottom:1.1rem}
-.photo-band figcaption p{font-size:.98rem;color:var(--tx2);line-height:2.1;max-width:40ch;margin-bottom:1.8rem}
-@media(max-width:820px){.photo-band{grid-template-columns:1fr}.photo-band img{max-height:340px}}
-.svc.aidx:hover .more{gap:.95em}
-.svc{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:2.2rem 1.9rem 2rem;display:flex;flex-direction:column;gap:1.1rem;transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);overflow:hidden}
-.svc::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--cu-grad);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-.svc:hover{transform:translateY(-4px);border-color:var(--line-2);background:var(--panel-2)}
-.svc:hover::before{transform:scaleX(1)}
-.svc .no{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--cu2)}
-.svc h3{font-size:1.3rem;letter-spacing:.03em;min-height:3em;display:flex;align-items:flex-start}
-.svc .en{font-family:var(--grot);font-weight:500;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);margin-top:-.5rem}
-.svc p{font-size:.9rem;line-height:1.95;color:var(--tx2)}
-.svc .foot{margin-top:auto;padding-top:1.3rem;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.9rem}
-@media(min-width:1080px){
-  .svc p{min-height:170px}
-  .svc .foot{margin-top:0;min-height:180px}
-}
-.svc .menu{display:flex;flex-wrap:wrap;gap:.5rem}
-.svc .menu span{font-size:.72rem;letter-spacing:.03em;color:var(--tx2);border:1px solid var(--line-2);border-radius:999px;padding:.34em .8em}
-.svc .more{margin-top:auto;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--cu2);display:inline-flex;align-items:center;gap:.5em;transition:gap .3s var(--ease)}
-.svc .more:hover{gap:.9em}
-
-/* ============ CASE ============ */
-.case{background:var(--bg1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.case::after{content:"繋";position:absolute;right:-4vw;bottom:-16vw;font-family:var(--mincho);font-weight:800;font-size:34vw;color:var(--tx);opacity:.025;line-height:.7;pointer-events:none}
-.case-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:2}
-.case h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:1.1rem 0 1.2rem}
-.case .desc{font-size:.95rem;color:var(--tx2);line-height:2.1;max-width:46ch}
-.case .meta{display:flex;gap:1.6rem;flex-wrap:wrap;margin:1.6rem 0 2rem}
-.case .meta div{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--mut);line-height:1.8}
-.case .meta b{display:block;color:var(--tx);font-family:var(--sans);font-weight:500;font-size:.85rem;letter-spacing:.02em}
-.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
-.kpi{background:var(--panel);padding:1.7rem 1.4rem;position:relative}
-.kpi .st{position:absolute;top:1rem;right:1rem;font-family:var(--grot);font-size:.58rem;font-weight:700;letter-spacing:.1em;padding:.28em .7em;border-radius:999px}
-.kpi .st.ok{background:rgba(224,145,63,.16);color:var(--cu2);border:1px solid rgba(224,145,63,.4)}
-.kpi .st.ng{background:rgba(244,238,226,.06);color:var(--mut);border:1px solid var(--line-2)}
-.kpi .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-.kpi .v{font-family:var(--grot);font-weight:600;font-size:clamp(1.7rem,3vw,2.2rem);color:var(--tx);margin-top:.7rem;line-height:1}
-.kpi .v small{font-size:.46em;color:var(--cu2)}
-.kpi .n{font-size:.72rem;color:var(--mut);margin-top:.55rem;line-height:1.7}
-.case .foot-note{font-size:.76rem;color:var(--mut);margin-top:1rem}
-
-/* ============ NEWS ============ */
-.news-list{border-top:1px solid var(--line)}
-.nitem{display:grid;grid-template-columns:7.2em 6.4em 1fr auto;gap:1.4rem;align-items:baseline;padding:1.5rem .4rem;border-bottom:1px solid var(--line);transition:background .3s var(--ease)}
-.nitem .date{font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:var(--mut)}
-.nitem .tag{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.1em;color:var(--cu2);border:1px solid rgba(224,145,63,.45);border-radius:999px;padding:.28em .8em;text-align:center;white-space:nowrap}
-.nitem .ttl{font-size:.94rem;font-weight:400;color:var(--tx2);line-height:1.9;transition:color .3s var(--ease)}
-.nitem .ar{font-family:var(--grot);color:var(--mut);transition:transform .3s var(--ease),color .3s var(--ease)}
-a.nitem:hover{background:rgba(63,99,216,.05)}
-a.nitem:hover .ttl{color:var(--tx)}
-a.nitem:hover .ar{transform:translateX(6px);color:var(--cu2)}
-
-/* ============ PHILOSOPHY (Message + MVV) ============ */
-.phil{background:var(--bg1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.phil::before{content:"継";position:absolute;left:-6vw;top:-8vw;font-family:var(--mincho);font-weight:800;font-size:30vw;color:var(--tx);opacity:.025;line-height:.7;pointer-events:none}
-.msg-big{font-family:var(--mincho);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.7rem);color:var(--tx);letter-spacing:.04em;line-height:1.6}
-.msg-big em{font-style:normal;background:var(--cu-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.msg-body{display:flex;flex-direction:column;gap:1.3rem;margin-top:2.2rem;max-width:62ch}
-.msg-body p{font-size:.92rem;line-height:2.15;color:var(--tx2)}
-.mvv{margin-top:clamp(3rem,6vw,4.5rem);border-top:1px solid var(--line)}
-.mvv-row{display:grid;grid-template-columns:200px 1fr;gap:clamp(1.5rem,4vw,3.5rem);padding:clamp(1.8rem,3.6vw,2.6rem) 0;border-bottom:1px solid var(--line)}
-.mvv-lab .en{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cu2);display:block}
-.mvv-lab .jp{font-family:var(--mincho);font-weight:700;font-size:1.5rem;color:var(--tx);display:block;margin-top:.5rem}
-.mvv-content .big{font-family:var(--mincho);font-weight:700;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--tx);line-height:1.8;margin-bottom:.8rem}
-.mvv-content .big em{font-style:normal;color:var(--cu2)}
-.mvv-content p{font-size:.92rem;color:var(--tx2);max-width:62ch}
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,2.6vw,2rem)}
-.values .vh{font-family:var(--mincho);font-weight:700;font-size:1.08rem;color:var(--cu2);margin-bottom:.6rem}
-.values p{font-size:.88rem;line-height:2;color:var(--tx2)}
-.nb{white-space:nowrap}
-
-/* ============ VOICE ============ */
-.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.vcard{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:1.9rem 1.7rem;display:flex;flex-direction:column;gap:1rem;transition:border-color .35s var(--ease),transform .35s var(--ease)}
-.vcard:hover{border-color:var(--line-2);transform:translateY(-3px)}
-.vcard .q{font-family:var(--grot);font-weight:700;font-size:2rem;line-height:.6;background:var(--cu-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.vcard p{font-size:.88rem;line-height:2;color:var(--tx2)}
-.vcard .who{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem}
-.vcard .who b{font-size:.86rem;font-weight:500;color:var(--tx)}
-.vcard .who span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--mut)}
-
-/* ============ ABOUT ============ */
-.about-grid{display:grid;grid-template-columns:340px 1fr;gap:clamp(2rem,5vw,4.5rem)}
-.about-id .role{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cu2);margin-bottom:1.1rem}
-.about-id h2{font-size:clamp(2rem,4vw,2.7rem);letter-spacing:.08em}
-.about-id .en{font-family:var(--grot);font-weight:500;font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-top:.7rem}
-.motto{margin-top:2.2rem;border-left:2px solid var(--cu);padding:.4rem 0 .4rem 1.4rem}
-.motto .l{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:.7rem}
-.motto p{font-family:var(--mincho);font-weight:700;font-size:clamp(1.25rem,2.2vw,1.6rem);color:var(--cu2);line-height:1.75}
-.vis{font-family:var(--mincho);font-weight:500;font-size:clamp(.98rem,1.5vw,1.1rem);line-height:2.3;color:var(--tx2)}
-.vis b{color:var(--tx);font-weight:700}
-.tl-l{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cu2);margin:2.6rem 0 .4rem}
-.tl-row{display:grid;grid-template-columns:64px 1fr;gap:1.4rem;padding:1.25rem 0;border-bottom:1px solid var(--line);align-items:baseline}
-.tl-row .yr{font-family:var(--grot);font-weight:600;font-size:.95rem;color:var(--cu2)}
-.tl-row .d b{display:block;font-family:var(--mincho);font-weight:700;color:var(--tx);font-size:1.02rem;margin-bottom:.25rem}
-.tl-row .d span{font-size:.86rem;color:var(--mut);line-height:1.9}
-
-/* ============ COMPANY + CONTACT ============ */
-.foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
-.company-rows{border-top:1px solid var(--line)}
-.crow{display:grid;grid-template-columns:110px 1fr;gap:1.5rem;padding:1.15rem .2rem;border-bottom:1px solid var(--line)}
-.crow dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--mut);padding-top:.35em}
-.crow dd{font-size:.92rem;font-weight:400;color:var(--tx2);line-height:1.95}
-.contact-card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:clamp(2rem,4vw,3rem);position:relative;overflow:hidden}
-.contact-card::after{content:"";position:absolute;right:-70px;bottom:-70px;width:230px;height:230px;background:radial-gradient(circle,rgba(224,145,63,.16),transparent 65%);pointer-events:none}
-.contact-card h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.6;margin:1.2rem 0 1rem}
-.contact-card h2 em{font-style:normal;background:var(--cu-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.contact-card p{font-size:.92rem;color:var(--tx2);max-width:38ch;margin-bottom:1.8rem}
-.mail-btn{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.9em;background:var(--cu);color:#fff;font-family:var(--mono);font-size:.8rem;font-weight:700;letter-spacing:.06em;padding:1.05em 1.9em;border-radius:2px;transition:background .3s var(--ease),transform .3s var(--ease)}
-.contact-actions{position:relative;z-index:2;display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
-.copy-btn{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--tx);background:transparent;border:1px solid var(--line-2);border-radius:2px;padding:1.02em 1.5em;cursor:pointer;transition:border-color .3s var(--ease),color .3s var(--ease),background .3s var(--ease)}
-.copy-btn:hover{border-color:var(--cu);color:var(--cu2)}
-.copy-btn.done{border-color:var(--cu);color:var(--cu2);background:rgba(91,131,240,.12)}
-.mail-addr{position:relative;z-index:2;display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.02em;color:var(--tx2);border-bottom:1px solid var(--line-2);padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease)}
-.mail-addr:hover{color:var(--cu2);border-color:var(--cu)}
-.mail-btn:hover{background:var(--cu2);transform:translateY(-2px)}
-
-/* ============ FOOTER ============ */
-footer{border-top:1px solid var(--line);padding:2.4rem 0;background:var(--bg0)}
-.fbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.fbar .cp{font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;color:var(--mut)}
-.fbar .logo .sub{color:var(--mut)}
-
-/* ============ RESPONSIVE ============ */
-@media(max-width:1000px){
-  .stats .grid{grid-template-columns:repeat(2,1fr)}
-  .case-grid{grid-template-columns:1fr}
-  .voice-grid{grid-template-columns:repeat(2,1fr)}
-  .about-grid{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr}
-  .mvv-row{grid-template-columns:1fr;gap:.9rem}
-  .values{grid-template-columns:1fr}
-}
-@media(max-width:900px){
-  .nav-links{position:fixed;top:0;left:0;width:100vw;height:100svh;background:rgba(14,11,7,.97);backdrop-filter:blur(18px);flex-direction:column;justify-content:center;gap:2rem;transform:translateY(-100%);transition:transform .5s var(--ease);z-index:120}
-  .nav-links.open{transform:none}
-  .nav-links a{font-size:1.15rem}
-  .burger{display:block}
-}
-@media(max-width:640px){
-  .voice-grid{grid-template-columns:1fr}
-  .nitem{grid-template-columns:auto auto;grid-template-areas:"date tag" "ttl ttl";row-gap:.6rem}
-  .nitem .date{grid-area:date}.nitem .tag{grid-area:tag;justify-self:start}
-  .nitem .ttl{grid-area:ttl}.nitem .ar{display:none}
-  .kpis{grid-template-columns:1fr 1fr}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
-  .beam{height:clamp(52px,8vh,86px)}
-}
-
-/* ===== light theme refinements ===== */
-body{font-weight:400}
-.hero::after{opacity:.7}
-.svc{box-shadow:0 10px 30px -20px rgba(23,30,48,.18)}
-.svc:hover{box-shadow:0 22px 46px -22px rgba(23,30,48,.26);background:#fff}
-.vcard{box-shadow:0 10px 28px -20px rgba(23,30,48,.14)}
-.photo-band img{box-shadow:0 24px 60px -30px rgba(23,30,48,.4)}
-.contact-card{background:var(--cu-grad);border:0;box-shadow:0 26px 64px -28px rgba(63,99,216,.55)}
-.contact-card .lab{color:rgba(255,255,255,.9)}
-.contact-card .lab::before{background:#fff}
-.contact-card h2,.contact-card h2 em{color:#fff}
-.contact-card p{color:rgba(255,255,255,.92)}
-.contact-card .mail-btn{background:#fff;color:var(--cu)}
-.contact-card .mail-btn:hover{background:#eef1fb}
-.contact-card .copy-btn{color:#fff;border-color:rgba(255,255,255,.55)}
-.contact-card .copy-btn:hover{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
-.contact-card .copy-btn.done{background:#fff;color:var(--cu);border-color:#fff}
-.contact-card .mail-addr{color:#fff;border-bottom-color:rgba(255,255,255,.5)}
-.contact-card::after{background:radial-gradient(60% 80% at 100% 100%,rgba(255,255,255,.28),transparent 60%)}
-br.wbr{display:inline}@media(max-width:640px){br.wbr{display:none}}
-</style>
-<link rel="stylesheet" href="assets/motion.css?v=20261105">
-<script src="assets/motion.js?v=20261105" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rl.css?v=2">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/rl.js?v=2" defer></script>
 </head>
 <body>
+<div class="prog" aria-hidden="true"></div>
 
-<header id="hd">
-  <div class="nav">
-    <a href="#top" class="logo" aria-label="RELIGHT">
-      <span class="wm">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#5b83f0"/></svg></span>GHT</span>
-      
-    </a>
-    <ul class="nav-links" id="nl">
+<!-- ============ HEADER ============ -->
+<header class="hd">
+  <div class="hd-in">
+    <a href="#top" class="logo" aria-label="RELIGHT トップへ">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#9db4ff"/></svg></span>GHT</a>
+    <ul class="nav" id="nav">
       <li><a href="#serv">事業内容</a></li>
+      <li><a href="#approach">アプローチ</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#phil">理念</a></li>
       <li><a href="about.html">代表</a></li>
-      <li><a href="#company">会社概要</a></li>
-      <li><a href="#contact" class="nav-cta">CONTACT</a></li>
+      <li><a href="#contact" class="cta">お問い合わせ</a></li>
     </ul>
-    <button class="burger" id="bg" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" aria-label="メニュー" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 
+<main>
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <svg class="flame-mark" viewBox="0 0 24 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#5b83f0"/></svg>
-  <div class="beam" aria-hidden="true"></div>
-  <h1>経験と知恵を、<em>次世代へ繋ぐ</em>。</h1>
-  <p class="hero-sub">トヨタで培った現場改善のノウハウと、新規事業開発の経験で。<br class="wbr">構想から実装・運営まで伴走し、あなたのビジネスを次のステージへ。</p>
-  <div class="hero-chips">
-    <a href="#serv"><i>01</i>営業代行事業</a>
-    <a href="#serv"><i>02</i>アプリ開発・運営事業</a>
+  <div class="hero-fallback" aria-hidden="true"></div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <h1 aria-label="経験と知恵を、次世代へ繋ぐ。">
+      <span class="ln" aria-hidden="true">経験と知恵を、<span class="grad-t">次世代へ繋ぐ。</span></span>
+    </h1>
+    <p class="hero-sub">トヨタで培った現場改善（TPS）と新規事業開発の経験で、<br class="pc">構想から実装・運営まで伴走する、実装型コンサルティング。</p>
+    <div class="hero-act">
+      <a href="#serv" class="btn pri">事業内容を見る <span class="ar">→</span></a>
+      <a href="#contact" class="btn gho">無料で相談する <span class="ar">↗</span></a>
+    </div>
   </div>
-  <div class="hero-cta">
-    <a href="#serv" class="btn solid">事業内容を見る</a>
-    <a href="#contact" class="btn ghost">お問い合わせ ↗</a>
+  <div class="wrap hero-meta" aria-hidden="true">
+    <span class="loc">Tokyo / Nakano</span>
+    <span class="sc">Scroll <i></i></span>
+    <span class="loc">Est. 2026</span>
   </div>
-  <div class="scrollcue">Scroll <i></i></div>
 </section>
 
-<!-- ============ KEYWORD MARQUEE ============ -->
-<div class="mx-marquee" aria-hidden="true"><div class="track"><span>現場改善 × TPS</span><span class="o">新規事業開発</span><span>営業代行</span><span class="o">展示会ハック</span><span>アプリ開発・運営</span><span class="o">構想から実装まで</span><span>伴走型コンサルティング</span><span class="o">経験を、次世代へ</span><span>現場改善 × TPS</span><span class="o">新規事業開発</span><span>営業代行</span><span class="o">展示会ハック</span><span>アプリ開発・運営</span><span class="o">構想から実装まで</span><span>伴走型コンサルティング</span><span class="o">経験を、次世代へ</span></div></div>
+<!-- ============ MARQUEE ============ -->
+<div class="mq" aria-hidden="true"><div class="tr">
+  <span>現場改善 × TPS</span><span class="o">Implementation Consulting</span><span>新規事業開発</span><span class="o">Sales Outsourcing</span><span>展示会ハック</span><span class="o">App Development</span><span>構想から実装まで</span><span class="o">Since 2026</span>
+  <span>現場改善 × TPS</span><span class="o">Implementation Consulting</span><span>新規事業開発</span><span class="o">Sales Outsourcing</span><span>展示会ハック</span><span class="o">App Development</span><span>構想から実装まで</span><span class="o">Since 2026</span>
+</div></div>
 
-<!-- ============ SERVICES ============ -->
-<section class="sec" id="serv">
+<!-- ============ NUMBERS (BENTO) ============ -->
+<section class="sec" id="numbers">
   <div class="wrap">
     <div class="shead">
-      <div><span class="lab rv">Services</span><h2 class="rv d1">事業内容</h2></div>
-      <p class="lead rv d2">お客様の未来を支える2つの事業。<br class="wbr">構想だけで終わらせず、現場で成果が出るまで伴走します。</p>
+      <div><span class="eyebrow">Track Record</span><h2 class="h-sec">経験と実績</h2></div>
+      <p class="lead rv">机上の提案で終わらせず、現場で成果が出るところまで。積み重ねてきた経験です。</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc rv">
-        <span class="no">01</span>
-        <h3>営業代行事業</h3>
-        <span class="en">Sales Outsourcing</span>
-        <p>営業戦略の設計（コンサルティング）から、実行・商談アポの獲得までを一気通貫で代行。「絵を描く」だけで終わらせず、現場で商談が生まれるところまで担います。</p>
-        <div class="foot"><div class="menu"><span>営業戦略・設計</span><span>商談獲得</span></div><a href="consulting.html" class="more">コンサルティング →</a><a href="advisory.html" class="more">顧問サービス →</a><a href="https://ymozfleet-creator.github.io/tenji-hack/" target="_blank" rel="noopener" class="more">展示会ハック（アポ獲得代行） →</a></div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c9cff"/><stop offset=".5" stop-color="#9d7bff"/><stop offset="1" stop-color="#3ee0f0"/></linearGradient></defs></svg>
+    <div class="bento">
+      <div class="cell w6">
+        <span class="k">Experience</span>
+        <div class="big"><span data-count>10</span><small>年</small></div>
+        <p>トヨタ自動車での事業企画・法人営業・現場改善の経験。業界トップ企業との共創事業の企画から、新規事業の立ち上げまでを担ってきました。</p>
+        <div class="chipset"><span>トヨタ生産方式（TPS）</span><span>新規事業開発</span><span>法人営業</span><span>PMO</span></div>
       </div>
-      <div class="svc rv d1">
-        <span class="no">02</span>
-        <h3>アプリ開発・運営事業</h3>
-        <span class="en">Development</span>
-        <p>アイデアをプロダクトへ。企画から開発、運営までを一貫して支援。事業を動かし続けるための仕組みごと、形にします。</p>
-        <div class="foot"><div class="menu"><span>自社プロダクト開発</span><span>受託開発</span><span>運営・グロース</span></div><a href="dev.html" class="more">詳しく見る →</a></div>
+      <div class="cell w3">
+        <span class="k">Co-creation</span>
+        <h3>鉄道・行政との<br>共創実績</h3>
+        <div class="chipset"><span>京急電鉄</span><span>名古屋鉄道</span><span>東京都</span></div>
+      </div>
+      <div class="cell w3">
+        <span class="k">Business</span>
+        <div class="big"><span data-count>2</span><small>事業</small></div>
+        <p>営業代行事業 ／ アプリ開発・運営事業</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES (STICKY STACK) ============ -->
+<section class="sec" id="serv" style="padding-top:0">
+  <div class="wrap">
+    <div class="shead">
+      <div><span class="eyebrow">Services</span><h2 class="h-sec">事業内容</h2></div>
+      <p class="lead rv">お客様の未来を支える2つの事業。構想だけで終わらせず、現場で成果が出るまで伴走します。</p>
+    </div>
+    <div class="stack">
+      <article class="svc">
+        <div>
+          <div class="no">01</div>
+          <h3>営業代行事業</h3>
+          <span class="en">Sales Outsourcing</span>
+          <p>営業戦略の設計（コンサルティング）から、実行・商談アポの獲得までを一気通貫で代行。「絵を描く」だけで終わらせず、現場で商談が生まれるところまで担います。</p>
+        </div>
+        <div class="links">
+          <a href="consulting.html"><span>コンサルティング<small>期間を決めて、課題を集中的に解決</small></span><span class="ar">→</span></a>
+          <a href="advisory.html"><span>顧問サービス<small>経営の壁打ち相手として継続伴走</small></span><span class="ar">→</span></a>
+          <a href="https://ymozfleet-creator.github.io/tenji-hack/" target="_blank" rel="noopener"><span>展示会ハック<small>展示会の名刺を、商談アポに変える</small></span><span class="ar">↗</span></a>
+        </div>
+      </article>
+      <article class="svc">
+        <div>
+          <div class="no">02</div>
+          <h3>アプリ開発・運営事業</h3>
+          <span class="en">Development</span>
+          <p>アイデアをプロダクトへ。企画から開発、運営までを一貫して支援。事業を動かし続けるための仕組みごと、形にします。</p>
+          <div class="chipset"><span>自社プロダクト開発</span><span>受託開発</span><span>運営・グロース</span></div>
+        </div>
+        <div class="links">
+          <a href="dev.html"><span>アプリ開発・運営<small>企画・開発・運営をワンストップで</small></span><span class="ar">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH (PINNED HORIZONTAL) ============ -->
+<section class="proc" id="approach">
+  <div class="proc-pin">
+    <div class="wrap">
+      <div class="shead" style="margin-bottom:2.4rem">
+        <div><span class="eyebrow">Approach</span><h2 class="h-sec">トヨタ式で、課題を<br class="sp">「構造」から解く。</h2></div>
+        <p class="lead rv">思いつきの打ち手は、打ちません。現状を分解し、真因を特定してから、効果の大きい順に手を打ちます。</p>
+      </div>
+    </div>
+    <div class="proc-track">
+      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 01</div><h3>現状把握</h3><p>数字と現場の事実で、「いま」を見える化します。</p><i class="ln-prog"></i></div>
+      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 02</div><h3>真因分析</h3><p>「なぜ」を繰り返し、根本原因を特定します。</p><i class="ln-prog"></i></div>
+      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h6"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 03</div><h3>打ち手の設計</h3><p>効果 × 実行しやすさで、優先順位を決定します。</p><i class="ln-prog"></i></div>
+      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12l5 5L20 7"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 04</div><h3>実行と標準化</h3><p>やり切って、成果を「仕組み」として残します。</p><i class="ln-prog"></i></div>
+    </div>
+    <div class="wrap"><div class="proc-bar" aria-hidden="true"><i></i></div></div>
   </div>
 </section>
 
 <!-- ============ NEWS ============ -->
 <section class="sec" id="news">
   <div class="wrap">
-    <div class="shead">
-      <div><span class="lab rv">News</span><h2 class="rv d1">最新情報</h2></div>
-    </div>
-    <div class="news-list rv d1">
-      <a href="https://ymozfleet-creator.github.io/RELIGHT/poc-ground.html" class="nitem">
-        <span class="date">2026.06.03</span><span class="tag">受託実績</span>
-        <span class="ttl">東京都「PoC Ground Tokyo」成果報告会を実施。多世代型シェアモビリティ実証で、4項目中3項目のKPIを達成しました。</span>
-        <span class="ar">→</span>
-      </a>
-      <a href="https://prtimes.jp/main/html/rd/p/000000016.000108126.html" class="nitem" target="_blank" rel="noopener">
-        <span class="date">2026.04.08</span><span class="tag">新規事業</span>
-        <span class="ttl">合同会社Growth plus様と連携し、美容製品「NEWTON」の導入を開始しました。</span>
-        <span class="ar">→</span>
-      </a>
-      <a href="https://www.keikyu.co.jp/company/news/2025/20260319HP_25234MK.html" class="nitem" target="_blank" rel="noopener">
-        <span class="date">2026.03.19</span><span class="tag">実績紹介</span>
-        <span class="ttl">京急電鉄｜平和島駅周辺にて、多世代向けシェアモビリティの実証実験を開始しました。</span>
-        <span class="ar">→</span>
-      </a>
-      <a href="https://poc-ground.metro.tokyo.lg.jp/" class="nitem" target="_blank" rel="noopener">
-        <span class="date">2025.12.11</span><span class="tag">受託実績</span>
-        <span class="ttl">東京都「PoC Ground Tokyo 令和7年度一般コース」採択事業に、支援先事業様が採択されました。</span>
-        <span class="ar">→</span>
-      </a>
-      <a href="https://www.meitetsu.co.jp/moilab/" class="nitem" target="_blank" rel="noopener">
-        <span class="date">2025.12.10</span><span class="tag">実績紹介</span>
-        <span class="ttl">名古屋鉄道 オープンイノベーションLAB｜事業共創のための課題明確化ワークショップを実施しました。</span>
-        <span class="ar">→</span>
-      </a>
+    <div class="shead"><div><span class="eyebrow">News</span><h2 class="h-sec">最新情報</h2></div></div>
+    <div class="news">
+      <a class="ni" href="poc-ground.html"><span class="d">2026.06.03</span><span class="tg">受託実績</span><span class="t">東京都「PoC Ground Tokyo」成果報告会を実施。多世代型シェアモビリティ実証で、4項目中3項目のKPIを達成しました。</span><span class="ar">→</span></a>
+      <a class="ni" href="https://prtimes.jp/main/html/rd/p/000000016.000108126.html" target="_blank" rel="noopener"><span class="d">2026.04.08</span><span class="tg">新規事業</span><span class="t">合同会社Growth plus様と連携し、美容製品「NEWTON」の導入を開始しました。</span><span class="ar">↗</span></a>
+      <a class="ni" href="https://www.keikyu.co.jp/company/news/2025/20260319HP_25234MK.html" target="_blank" rel="noopener"><span class="d">2026.03.19</span><span class="tg">実績紹介</span><span class="t">京急電鉄｜平和島駅周辺にて、多世代向けシェアモビリティの実証実験を開始しました。</span><span class="ar">↗</span></a>
+      <a class="ni" href="https://poc-ground.metro.tokyo.lg.jp/" target="_blank" rel="noopener"><span class="d">2025.12.11</span><span class="tg">受託実績</span><span class="t">東京都「PoC Ground Tokyo 令和7年度一般コース」採択事業に、支援先事業様が採択されました。</span><span class="ar">↗</span></a>
+      <a class="ni" href="https://www.meitetsu.co.jp/moilab/" target="_blank" rel="noopener"><span class="d">2025.12.10</span><span class="tg">実績紹介</span><span class="t">名古屋鉄道 オープンイノベーションLAB｜事業共創のための課題明確化ワークショップを実施しました。</span><span class="ar">↗</span></a>
     </div>
   </div>
 </section>
 
-<!-- ============ PHILOSOPHY (Message + MVV) ============ -->
-<section class="phil sec" id="phil">
+<!-- ============ PHILOSOPHY ============ -->
+<section class="sec" id="phil">
   <div class="wrap">
-    <span class="lab rv">Philosophy</span>
-    <p class="msg-big rv d1" style="margin-top:1.2rem">唯一無二の経験を、<em>財産に。</em></p>
-    <div class="msg-body">
-      <p class="rv d1">誰もが持つ、あの時あの場所で得た唯一無二の経験には、必ず誰かの未来を照らすチカラが宿っている。私たちは、そう信じています。</p>
-      <p class="rv d2">その貴重な経験が、時間や場所の制約を超えて次世代へと繋がる懸け橋となること。それが、<b>私たちの使命</b>です。</p>
-      <p class="rv d3">あなたの情熱とノウハウが、誰かの未来を導く羅針盤となるよう——私たちは常に寄り添い、その継承の未来を支え続けます。</p>
-    </div>
-
+    <span class="eyebrow">Philosophy</span>
+    <p class="stmt" style="margin-top:1.6rem">誰もが持つ、あの時あの場所で得た唯一無二の経験には、必ず誰かの未来を照らすチカラが宿っている。<em class="grad-t">その経験を、次世代へ繋ぐ懸け橋に。</em></p>
     <div class="mvv">
-      <div class="mvv-row rv">
-        <div class="mvv-lab"><span class="en">Mission</span><span class="jp">使命</span></div>
-        <div class="mvv-content">
-          <p class="big">経験と知恵を、<em>次世代へ繋ぐ</em>。</p>
-          <p>一人ひとりの唯一無二の経験を、時間と場所の制約を超えて未来へ渡す。その継承の懸け橋となることが、<span class="nb">私たちの存在意義です。</span></p>
-        </div>
-      </div>
-      <div class="mvv-row rv">
-        <div class="mvv-lab"><span class="en">Vision</span><span class="jp">目指す姿</span></div>
-        <div class="mvv-content">
-          <p class="big">すべての経験が、<em>誰かの未来を照らす</em>社会へ。</p>
-          <p>あらゆる経験とノウハウが世代を超えて受け継がれ、次の挑戦者の羅針盤となる。そんな循環をつくることを目指します。</p>
-        </div>
-      </div>
-      <div class="mvv-row rv" style="border-bottom:0">
-        <div class="mvv-lab"><span class="en">Values</span><span class="jp">価値観</span></div>
-        <div class="mvv-content">
-          <div class="values">
-            <div><div class="vh">現場主義</div><p>トヨタ生産方式で培った、机上で終わらせない実践力。答えはいつも<span class="nb">現場にある。</span></p></div>
-            <div><div class="vh">伴走</div><p>提案して終わりにしない。お客様に常に寄り添い、結果が出るまで共に走る。</p></div>
-            <div><div class="vh">挑戦</div><p>本気の失敗には、価値がある。恐れずに一歩を踏み出し、変化をつくる。</p></div>
-          </div>
+      <div class="cell rv"><span class="k">Mission ／ 使命</span><p class="t">経験と知恵を、次世代へ繋ぐ。</p><p>一人ひとりの唯一無二の経験を、時間と場所の制約を超えて未来へ渡す。その継承の懸け橋となることが、私たちの存在意義です。</p></div>
+      <div class="cell rv" data-d=".1"><span class="k">Vision ／ 目指す姿</span><p class="t">すべての経験が、誰かの未来を照らす社会へ。</p><p>あらゆる経験とノウハウが世代を超えて受け継がれ、次の挑戦者の羅針盤となる。そんな循環をつくることを目指します。</p></div>
+      <div class="cell rv" data-d=".2"><span class="k">Values ／ 価値観</span>
+        <div class="vals">
+          <div><b>現場主義</b><span>机上で終わらせない実践力。答えはいつも現場にある。</span></div>
+          <div><b>伴走</b><span>提案して終わりにしない。結果が出るまで共に走る。</span></div>
+          <div><b>挑戦</b><span>本気の失敗には、価値がある。恐れずに一歩を踏み出す。</span></div>
         </div>
       </div>
     </div>
@@ -512,117 +240,65 @@ br.wbr{display:inline}@media(max-width:640px){br.wbr{display:none}}
 </section>
 
 <!-- ============ VOICE ============ -->
-<section class="sec" id="voice">
-  <div class="wrap">
-    <div class="shead">
-      <div><span class="lab rv">Voice</span><h2 class="rv d1">お客様の声</h2></div>
-      <p class="lead rv d2">現場で即実践できる——<br class="wbr">支援先の皆様からいただいた<span class="nb">声の一部です。</span></p>
+<section class="sec" id="voice" style="padding-top:0">
+  <div class="wrap"><div class="shead"><div><span class="eyebrow">Voice</span><h2 class="h-sec">お客様の声</h2></div><p class="lead rv">現場で即実践できる——支援先の皆様からいただいた声の一部です。</p></div></div>
+  <div class="vwrap">
+    <div class="vrow">
+      <div class="vc"><p>トヨタで培われた業務改善の視点が、私たちの組織に新しい風を吹き込んでくれました。単なる理論ではなく、現場で即実践できるアプローチが素晴らしかったです。</p><div class="who"><i></i><div><b>製造業 A社</b><span>経営企画部長</span></div></div></div>
+      <div class="vc"><p>モビリティサービスの立ち上げにあたり、地域との調整から運用体制まで包括的に支援いただきました。現場を熟知した実践的なアドバイスで、短期間での事業化が実現しました。</p><div class="who"><i></i><div><b>交通事業者 D社</b><span>新規事業担当</span></div></div></div>
+      <div class="vc"><p>セミナーでは、トヨタ生産方式の本質を分かりやすく学べました。知識の伝達ではなく、実務経験に基づいた深い洞察が得られる貴重な機会でした。</p><div class="who"><i></i><div><b>サービス業 C社</b><span>事業部長</span></div></div></div>
+      <div class="vc" aria-hidden="true"><p>トヨタで培われた業務改善の視点が、私たちの組織に新しい風を吹き込んでくれました。単なる理論ではなく、現場で即実践できるアプローチが素晴らしかったです。</p><div class="who"><i></i><div><b>製造業 A社</b><span>経営企画部長</span></div></div></div>
+      <div class="vc" aria-hidden="true"><p>モビリティサービスの立ち上げにあたり、地域との調整から運用体制まで包括的に支援いただきました。現場を熟知した実践的なアドバイスで、短期間での事業化が実現しました。</p><div class="who"><i></i><div><b>交通事業者 D社</b><span>新規事業担当</span></div></div></div>
+      <div class="vc" aria-hidden="true"><p>セミナーでは、トヨタ生産方式の本質を分かりやすく学べました。知識の伝達ではなく、実務経験に基づいた深い洞察が得られる貴重な機会でした。</p><div class="who"><i></i><div><b>サービス業 C社</b><span>事業部長</span></div></div></div>
     </div>
-    <div class="voice-grid">
-      <div class="vcard rv">
-        <div class="q">“</div>
-        <p>トヨタで培われた業務改善の視点が、私たちの組織に新しい風を吹き込んでくれました。単なる理論ではなく、現場で即実践できるアプローチが素晴らしかったです。</p>
-        <div class="who"><b>製造業 A社</b><span>経営企画部長</span></div>
-      </div>
-      <div class="vcard rv d1">
-        <div class="q">“</div>
-        <p>モビリティサービスの立ち上げにあたり、地域との調整から運用体制まで包括的に支援いただきました。現場を熟知した実践的なアドバイスで、短期間での事業化が実現しました。</p>
-        <div class="who"><b>交通事業者 D社</b><span>新規事業担当</span></div>
-      </div>
-      <div class="vcard rv d2">
-        <div class="q">“</div>
-        <p>セミナーでは、トヨタ生産方式の本質を分かりやすく学べました。知識の伝達ではなく、実務経験に基づいた深い洞察が得られる貴重な機会でした。</p>
-        <div class="who"><b>サービス業 C社</b><span>事業部長</span></div>
-      </div>
-      <div class="vcard rv">
-        <div class="q">“</div>
-        <p>モビリティサービスの導入で、利用者目線と運営効率の両立を実現できました。現場の声を丁寧に拾い上げながら、最適な仕組みを構築いただけました。</p>
-        <div class="who"><b>不動産管理 D社</b><span>マネージャー</span></div>
-      </div>
-      <div class="vcard rv d1">
-        <div class="q">“</div>
-        <p>新規事業の立ち上げに際し、戦略策定から実行支援まで伴走いただきました。豊富な経験に裏打ちされた具体的なアドバイスで、確実に前進できています。</p>
-        <div class="who"><b>中堅企業 E社</b><span>新規事業部長</span></div>
-      </div>
-      <div class="vcard rv d2">
-        <div class="q">“</div>
-        <p>組織変革のセミナーは、理論と実践のバランスが絶妙でした。「すぐに現場で活かせる」との声が多く、継続的な学びの機会として定着しています。</p>
-        <div class="who"><b>教育機関 F</b><span>人材育成担当</span></div>
-      </div>
+    <div class="vrow rev">
+      <div class="vc"><p>モビリティサービスの導入で、利用者目線と運営効率の両立を実現できました。現場の声を丁寧に拾い上げながら、最適な仕組みを構築いただけました。</p><div class="who"><i></i><div><b>不動産管理 D社</b><span>マネージャー</span></div></div></div>
+      <div class="vc"><p>新規事業の立ち上げに際し、戦略策定から実行支援まで伴走いただきました。豊富な経験に裏打ちされた具体的なアドバイスで、確実に前進できています。</p><div class="who"><i></i><div><b>中堅企業 E社</b><span>新規事業部長</span></div></div></div>
+      <div class="vc"><p>組織変革のセミナーは、理論と実践のバランスが絶妙でした。「すぐに現場で活かせる」との声が多く、継続的な学びの機会として定着しています。</p><div class="who"><i></i><div><b>教育機関 F</b><span>人材育成担当</span></div></div></div>
+      <div class="vc" aria-hidden="true"><p>モビリティサービスの導入で、利用者目線と運営効率の両立を実現できました。現場の声を丁寧に拾い上げながら、最適な仕組みを構築いただけました。</p><div class="who"><i></i><div><b>不動産管理 D社</b><span>マネージャー</span></div></div></div>
+      <div class="vc" aria-hidden="true"><p>新規事業の立ち上げに際し、戦略策定から実行支援まで伴走いただきました。豊富な経験に裏打ちされた具体的なアドバイスで、確実に前進できています。</p><div class="who"><i></i><div><b>中堅企業 E社</b><span>新規事業部長</span></div></div></div>
+      <div class="vc" aria-hidden="true"><p>組織変革のセミナーは、理論と実践のバランスが絶妙でした。「すぐに現場で活かせる」との声が多く、継続的な学びの機会として定着しています。</p><div class="who"><i></i><div><b>教育機関 F</b><span>人材育成担当</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<!-- ============ COMPANY + CONTACT ============ -->
-<section class="sec" id="company">
+<!-- ============ CONTACT + COMPANY ============ -->
+<section class="sec" id="contact" style="padding-top:0">
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="rv">
-        <span class="lab" style="display:inline-flex;margin-bottom:1.8rem">Company</span>
-        <dl class="company-rows">
-          <div class="crow"><dt>社名</dt><dd>RELIGHT</dd></div>
-          <div class="crow"><dt>代表</dt><dd>代表 茂住 雄太</dd></div>
-          <div class="crow"><dt>沿革</dt><dd>2026年 設立</dd></div>
-          <div class="crow"><dt>所在地</dt><dd>〒165-0023<br>東京都中野区江原町2-13-13</dd></div>
-          <div class="crow"><dt>事業内容</dt><dd>営業代行事業（コンサルティング・展示会ハック）<br>アプリ開発・運営事業</dd></div>
-        </dl>
+    <div class="cta-blk rv">
+      <span class="eyebrow">Contact</span>
+      <h2 style="margin-top:1.2rem">まずは、<span class="grad-t">お気軽にご相談を。</span></h2>
+      <p>事業のこと、サービスのこと、どんな小さなことでも構いません。一緒に考えるところから始めましょう。</p>
+      <div class="acts">
+        <a class="btn pri" href="https://mail.google.com/mail/?view=cm&fs=1&to=kanri@mycoach-myteam.com&su=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%88RELIGHT%EF%BC%89" target="_blank" rel="noopener">メールで相談する <span class="ar">↗</span></a>
+        <button type="button" class="btn gho" data-copy="kanri@mycoach-myteam.com">アドレスをコピー</button>
       </div>
-      <div class="contact-card rv d1" id="contact">
-        <span class="lab">Contact</span>
-        <h2>まずは、<br><em>お気軽にご相談を。</em></h2>
-        <p>事業のこと、サービスのこと、どんな小さなことでも構いません。一緒に考えるところから始めましょう。</p>
-        <div class="contact-actions">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kanri@mycoach-myteam.com&su=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%88RELIGHT%EF%BC%89" class="mail-btn" target="_blank" rel="noopener">メールを送る <span>↗</span></a>
-          <button type="button" class="copy-btn" data-copy="kanri@mycoach-myteam.com">アドレスをコピー</button>
-        </div>
-        <a class="mail-addr" href="mailto:kanri@mycoach-myteam.com">kanri@mycoach-myteam.com</a>
-      </div>
+      <a class="mail" href="mailto:kanri@mycoach-myteam.com">kanri@mycoach-myteam.com</a>
+    </div>
+
+    <div class="co" id="company">
+      <div><span class="eyebrow">Company</span><h2 class="h-sec">会社概要</h2></div>
+      <dl class="rv">
+        <div class="row"><dt>社名</dt><dd>RELIGHT</dd></div>
+        <div class="row"><dt>代表</dt><dd>代表 茂住 雄太</dd></div>
+        <div class="row"><dt>沿革</dt><dd>2026年 設立</dd></div>
+        <div class="row"><dt>所在地</dt><dd>〒165-0023 東京都中野区江原町2-13-13</dd></div>
+        <div class="row"><dt>事業内容</dt><dd>営業代行事業（コンサルティング・顧問・展示会ハック）<br>アプリ開発・運営事業</dd></div>
+      </dl>
     </div>
   </div>
 </section>
+</main>
 
-<footer>
+<footer class="ft">
   <div class="wrap">
-    <div class="fbar">
-      <span class="logo" aria-label="RELIGHT"><span class="wm">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#5b83f0"/></svg></span>GHT</span></span>
-      <span class="cp">© 2026 RELIGHT All Rights Reserved.</span>
+    <div class="ft-word" aria-hidden="true">RELIGHT</div>
+    <div class="ft-bar">
+      <nav><a href="consulting.html">コンサルティング</a><a href="advisory.html">顧問サービス</a><a href="dev.html">アプリ開発・運営</a><a href="about.html">代表メッセージ</a></nav>
+      <span>© 2026 RELIGHT All Rights Reserved.</span>
     </div>
   </div>
 </footer>
-
-<script>
-/* header state */
-const hd=document.getElementById('hd');
-addEventListener('scroll',()=>hd.classList.toggle('scr',scrollY>40),{passive:true});
-/* burger */
-const bg=document.getElementById('bg'),nl=document.getElementById('nl');
-bg.addEventListener('click',()=>{const o=nl.classList.toggle('open');bg.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
-nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');bg.classList.remove('open');document.body.style.overflow='';}));
-/* reveal */
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-/* count-up */
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const co=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);
-  const el=e.target,target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||0);
-  if(reduce){el.textContent=target.toFixed(dec);return}
-  const t0=performance.now(),dur=1400;
-  const step=(t)=>{const p=Math.min((t-t0)/dur,1),v=target*(1-Math.pow(1-p,3));
-    el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(step)};
-  requestAnimationFrame(step);
-});},{threshold:.6});
-document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
-/* copy email */
-document.querySelectorAll('.copy-btn').forEach(btn=>{
-  btn.addEventListener('click',async()=>{
-    const t=btn.dataset.copy, orig=btn.textContent;
-    try{await navigator.clipboard.writeText(t);}
-    catch(e){const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(_){}ta.remove();}
-    btn.textContent='コピーしました ✓';btn.classList.add('done');
-    setTimeout(()=>{btn.textContent=orig;btn.classList.remove('done');},1800);
-  });
-});
-</script>
+<style>.sp{display:none}@media(max-width:640px){.sp{display:inline}.pc{display:none}}</style>
 </body>
 </html>
