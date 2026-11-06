@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://ymozfleet-creator.github.io/RELIGHT/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="RELIGHT">
-<meta name="theme-color" content="#05070f">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:site_name" content="RELIGHT">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="RELIGHT｜経験と知恵を、次世代へ繋ぐ">
@@ -67,150 +67,135 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/rl.css?v=2">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-<script src="assets/rl.js?v=2" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rl.css?v=3">
+<script src="assets/rl.js?v=3" defer></script>
 </head>
 <body>
-<div class="prog" aria-hidden="true"></div>
+<script>document.documentElement.classList.add('no-js')</script>
 
-<!-- ============ HEADER ============ -->
 <header class="hd">
   <div class="hd-in">
-    <a href="#top" class="logo" aria-label="RELIGHT トップへ">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#9db4ff"/></svg></span>GHT</a>
+    <a href="#top" class="logo" aria-label="RELIGHT トップへ"><span class="wm">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#2f56d3"/></svg></span>GHT</span><span class="sub">営業代行・アプリ開発</span></a>
     <ul class="nav" id="nav">
       <li><a href="#serv">事業内容</a></li>
-      <li><a href="#approach">アプローチ</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#phil">理念</a></li>
-      <li><a href="about.html">代表</a></li>
-      <li><a href="#contact" class="cta">お問い合わせ</a></li>
+      <li><a href="#why">選ばれる理由</a></li>
+      <li><a href="#flow">進め方</a></li>
+      <li><a href="#news">実績・お知らせ</a></li>
+      <li><a href="about.html">代表紹介</a></li>
+      <li><a href="#contact" class="cta">無料で相談する</a></li>
     </ul>
-    <button class="burger" aria-label="メニュー" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main>
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="hero-fallback" aria-hidden="true"></div>
-  <canvas id="gl" aria-hidden="true"></canvas>
-  <div class="wrap hero-in">
-    <h1 aria-label="経験と知恵を、次世代へ繋ぐ。">
-      <span class="ln" aria-hidden="true">経験と知恵を、<span class="grad-t">次世代へ繋ぐ。</span></span>
-    </h1>
-    <p class="hero-sub">トヨタで培った現場改善（TPS）と新規事業開発の経験で、<br class="pc">構想から実装・運営まで伴走する、実装型コンサルティング。</p>
-    <div class="hero-act">
-      <a href="#serv" class="btn pri">事業内容を見る <span class="ar">→</span></a>
-      <a href="#contact" class="btn gho">無料で相談する <span class="ar">↗</span></a>
-    </div>
-  </div>
-  <div class="wrap hero-meta" aria-hidden="true">
-    <span class="loc">Tokyo / Nakano</span>
-    <span class="sc">Scroll <i></i></span>
-    <span class="loc">Est. 2026</span>
-  </div>
-</section>
-
-<!-- ============ MARQUEE ============ -->
-<div class="mq" aria-hidden="true"><div class="tr">
-  <span>現場改善 × TPS</span><span class="o">Implementation Consulting</span><span>新規事業開発</span><span class="o">Sales Outsourcing</span><span>展示会ハック</span><span class="o">App Development</span><span>構想から実装まで</span><span class="o">Since 2026</span>
-  <span>現場改善 × TPS</span><span class="o">Implementation Consulting</span><span>新規事業開発</span><span class="o">Sales Outsourcing</span><span>展示会ハック</span><span class="o">App Development</span><span>構想から実装まで</span><span class="o">Since 2026</span>
-</div></div>
-
-<!-- ============ NUMBERS (BENTO) ============ -->
-<section class="sec" id="numbers">
+<main id="top">
+<!-- ============ ファーストビュー ============ -->
+<section class="hero">
   <div class="wrap">
-    <div class="shead">
-      <div><span class="eyebrow">Track Record</span><h2 class="h-sec">経験と実績</h2></div>
-      <p class="lead rv">机上の提案で終わらせず、現場で成果が出るところまで。積み重ねてきた経験です。</p>
+    <span class="eyebrow anim a1">トヨタ式の現場改善 × 新規事業開発</span>
+    <h1 aria-label="経験と知恵を、次世代へ繋ぐ。">経験と知恵を、<span class="em">次世代へ繋ぐ。</span></h1>
+    <p class="lead anim a2">RELIGHTは、トヨタで培った現場改善（TPS）と新規事業開発の経験を活かし、<b>営業代行</b>と<b>アプリ開発・運営</b>で、構想から成果が出るまで伴走します。</p>
+    <div class="hero-act anim a3">
+      <a href="#contact" class="btn pri">無料で相談する <span class="ar">→</span></a>
+      <a href="#serv" class="btn sec2">事業内容を見る</a>
     </div>
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c9cff"/><stop offset=".5" stop-color="#9d7bff"/><stop offset="1" stop-color="#3ee0f0"/></linearGradient></defs></svg>
-    <div class="bento">
-      <div class="cell w6">
-        <span class="k">Experience</span>
-        <div class="big"><span data-count>10</span><small>年</small></div>
-        <p>トヨタ自動車での事業企画・法人営業・現場改善の経験。業界トップ企業との共創事業の企画から、新規事業の立ち上げまでを担ってきました。</p>
-        <div class="chipset"><span>トヨタ生産方式（TPS）</span><span>新規事業開発</span><span>法人営業</span><span>PMO</span></div>
-      </div>
-      <div class="cell w3">
-        <span class="k">Co-creation</span>
-        <h3>鉄道・行政との<br>共創実績</h3>
-        <div class="chipset"><span>京急電鉄</span><span>名古屋鉄道</span><span>東京都</span></div>
-      </div>
-      <div class="cell w3">
-        <span class="k">Business</span>
-        <div class="big"><span data-count>2</span><small>事業</small></div>
-        <p>営業代行事業 ／ アプリ開発・運営事業</p>
-      </div>
+    <div class="quick anim a4">
+      <a class="qc" href="#serv-sales">
+        <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+        <span><h3>営業代行事業</h3><p>営業戦略の設計から、商談アポの獲得まで</p></span>
+        <span class="go">→</span>
+      </a>
+      <a class="qc" href="#serv-dev">
+        <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
+        <span><h3>アプリ開発・運営事業</h3><p>企画・開発から運営・グロースまで</p></span>
+        <span class="go">→</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ SERVICES (STICKY STACK) ============ -->
-<section class="sec" id="serv" style="padding-top:0">
+<!-- ============ お悩み ============ -->
+<section class="sec alt" id="worry">
   <div class="wrap">
-    <div class="shead">
-      <div><span class="eyebrow">Services</span><h2 class="h-sec">事業内容</h2></div>
-      <p class="lead rv">お客様の未来を支える2つの事業。構想だけで終わらせず、現場で成果が出るまで伴走します。</p>
+    <div class="shead center rv"><span class="label">こんなお悩みはありませんか？</span><h2 class="h2">「やりたいこと」はあるのに、<br class="sp">前に進まない。</h2></div>
+    <div class="worries">
+      <div class="wo rv"><span class="q">“</span><p>営業戦略を考えても、<br>商談の数が増えない</p><a class="to" href="consulting.html">→ 営業代行（コンサルティング）</a></div>
+      <div class="wo rv d1"><span class="q">“</span><p>展示会で名刺は集まるのに、<br>アポにつながらない</p><a class="to" href="https://ymozfleet-creator.github.io/tenji-hack/" target="_blank" rel="noopener">→ 展示会ハック</a></div>
+      <div class="wo rv d2"><span class="q">“</span><p>経営や新規事業の相談相手が<br>社内にいない</p><a class="to" href="advisory.html">→ 顧問サービス</a></div>
+      <div class="wo rv d3"><span class="q">“</span><p>アプリを作りたいが、<br>何から始めればいいか分からない</p><a class="to" href="dev.html">→ アプリ開発・運営</a></div>
     </div>
-    <div class="stack">
-      <article class="svc">
-        <div>
-          <div class="no">01</div>
+  </div>
+</section>
+
+<!-- ============ 事業内容 ============ -->
+<section class="sec" id="serv">
+  <div class="wrap">
+    <div class="shead rv"><span class="label">事業内容</span><h2 class="h2">2つの事業で、構想から実行まで。</h2><p class="intro">「計画を立てて終わり」にはしません。現場で成果が出るところまで、私たちが一緒に手を動かします。</p></div>
+    <div class="svcs">
+      <article class="svc rv" id="serv-sales">
+        <div class="top">
+          <span class="no">SERVICE 01</span>
           <h3>営業代行事業</h3>
-          <span class="en">Sales Outsourcing</span>
-          <p>営業戦略の設計（コンサルティング）から、実行・商談アポの獲得までを一気通貫で代行。「絵を描く」だけで終わらせず、現場で商談が生まれるところまで担います。</p>
+          <p>営業戦略の設計（コンサルティング）から、実行・商談アポの獲得までを一気通貫で代行します。</p>
         </div>
-        <div class="links">
-          <a href="consulting.html"><span>コンサルティング<small>期間を決めて、課題を集中的に解決</small></span><span class="ar">→</span></a>
-          <a href="advisory.html"><span>顧問サービス<small>経営の壁打ち相手として継続伴走</small></span><span class="ar">→</span></a>
-          <a href="https://ymozfleet-creator.github.io/tenji-hack/" target="_blank" rel="noopener"><span>展示会ハック<small>展示会の名刺を、商談アポに変える</small></span><span class="ar">↗</span></a>
+        <div class="body">
+          <div><h4>こんな方におすすめ</h4><ul><li>新規開拓の仕組みをつくりたい</li><li>展示会の成果を商談につなげたい</li><li>営業・経営の相談相手がほしい</li></ul></div>
+          <div class="links">
+            <a href="consulting.html"><span>コンサルティング<small>期間を決めて、課題を集中的に解決</small></span><span class="ar">→</span></a>
+            <a href="advisory.html"><span>顧問サービス<small>経営の相談相手として継続的に伴走</small></span><span class="ar">→</span></a>
+            <a href="https://ymozfleet-creator.github.io/tenji-hack/" target="_blank" rel="noopener"><span>展示会ハック<small>展示会で集めた名刺を、商談アポに変える</small></span><span class="ar">↗</span></a>
+          </div>
         </div>
       </article>
-      <article class="svc">
-        <div>
-          <div class="no">02</div>
+      <article class="svc rv d1" id="serv-dev">
+        <div class="top">
+          <span class="no">SERVICE 02</span>
           <h3>アプリ開発・運営事業</h3>
-          <span class="en">Development</span>
-          <p>アイデアをプロダクトへ。企画から開発、運営までを一貫して支援。事業を動かし続けるための仕組みごと、形にします。</p>
-          <div class="chipset"><span>自社プロダクト開発</span><span>受託開発</span><span>運営・グロース</span></div>
+          <p>アイデアをプロダクトへ。企画から開発、運営までを一貫して支援し、事業を動かし続ける仕組みごと形にします。</p>
         </div>
-        <div class="links">
-          <a href="dev.html"><span>アプリ開発・運営<small>企画・開発・運営をワンストップで</small></span><span class="ar">→</span></a>
+        <div class="body">
+          <div><h4>こんな方におすすめ</h4><ul><li>アイデアをアプリとして形にしたい</li><li>開発会社に丸投げせず、事業目線で進めたい</li><li>リリース後の運営・改善まで任せたい</li></ul></div>
+          <div class="links">
+            <a href="dev.html"><span>アプリ開発・運営<small>自社プロダクト開発・受託開発・運営</small></span><span class="ar">→</span></a>
+          </div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ APPROACH (PINNED HORIZONTAL) ============ -->
-<section class="proc" id="approach">
-  <div class="proc-pin">
-    <div class="wrap">
-      <div class="shead" style="margin-bottom:2.4rem">
-        <div><span class="eyebrow">Approach</span><h2 class="h-sec">トヨタ式で、課題を<br class="sp">「構造」から解く。</h2></div>
-        <p class="lead rv">思いつきの打ち手は、打ちません。現状を分解し、真因を特定してから、効果の大きい順に手を打ちます。</p>
-      </div>
+<!-- ============ 選ばれる理由 ============ -->
+<section class="sec alt" id="why">
+  <div class="wrap">
+    <div class="shead rv"><span class="label">選ばれる理由</span><h2 class="h2">RELIGHTが大切にしていること</h2></div>
+    <div class="why">
+      <div class="wy rv"><div class="n"><span data-count>10</span><small>年</small></div><h3>トヨタで培った現場改善の力</h3><p>トヨタ自動車での現場改善・事業企画の経験をもとに、課題を構造から分解し、効果の大きい順に手を打ちます。</p></div>
+      <div class="wy rv d1"><div class="n t">一気通貫</div><h3>戦略から実行まで、まとめて担う</h3><p>戦略を描くだけで終わらせません。商談の獲得やアプリの開発・運営など、実行まで責任を持ちます。</p></div>
+      <div class="wy rv d2"><div class="n t">現場主義</div><h3>成果が出るまで、隣で伴走</h3><p>鉄道会社や行政とのプロジェクトでも、現場に入り込んで一緒に動いてきました。答えはいつも現場にあります。</p></div>
     </div>
-    <div class="proc-track">
-      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 01</div><h3>現状把握</h3><p>数字と現場の事実で、「いま」を見える化します。</p><i class="ln-prog"></i></div>
-      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 02</div><h3>真因分析</h3><p>「なぜ」を繰り返し、根本原因を特定します。</p><i class="ln-prog"></i></div>
-      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h6"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 03</div><h3>打ち手の設計</h3><p>効果 × 実行しやすさで、優先順位を決定します。</p><i class="ln-prog"></i></div>
-      <div class="step"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12l5 5L20 7"/></svg></div><div class="n" style="margin-top:1.6rem">STEP 04</div><h3>実行と標準化</h3><p>やり切って、成果を「仕組み」として残します。</p><i class="ln-prog"></i></div>
-    </div>
-    <div class="wrap"><div class="proc-bar" aria-hidden="true"><i></i></div></div>
   </div>
 </section>
 
-<!-- ============ NEWS ============ -->
-<section class="sec" id="news">
+<!-- ============ 進め方 ============ -->
+<section class="sec" id="flow">
   <div class="wrap">
-    <div class="shead"><div><span class="eyebrow">News</span><h2 class="h-sec">最新情報</h2></div></div>
-    <div class="news">
+    <div class="shead rv"><span class="label">進め方</span><h2 class="h2">トヨタ式の4ステップで、課題を解きます。</h2><p class="intro">思いつきの打ち手は打ちません。まず事実を集め、原因を特定してから動きます。</p></div>
+    <div class="steps">
+      <div class="st rv"><span class="badge">1</span><h3>現状把握</h3><p>数字と現場の事実で、「いま」を見える化します。</p></div>
+      <div class="st rv d1"><span class="badge">2</span><h3>真因分析</h3><p>「なぜ」を繰り返し、根本の原因を特定します。</p></div>
+      <div class="st rv d2"><span class="badge">3</span><h3>打ち手の設計</h3><p>効果と実行しやすさで、優先順位を決めます。</p></div>
+      <div class="st rv d3"><span class="badge">4</span><h3>実行と標準化</h3><p>やり切って、成果を「仕組み」として残します。</p></div>
+    </div>
+    <div class="steps-line" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- ============ 実績・お知らせ ============ -->
+<section class="sec alt" id="news">
+  <div class="wrap">
+    <div class="shead rv"><span class="label">実績・お知らせ</span><h2 class="h2">最新情報</h2></div>
+    <div class="news rv">
       <a class="ni" href="poc-ground.html"><span class="d">2026.06.03</span><span class="tg">受託実績</span><span class="t">東京都「PoC Ground Tokyo」成果報告会を実施。多世代型シェアモビリティ実証で、4項目中3項目のKPIを達成しました。</span><span class="ar">→</span></a>
       <a class="ni" href="https://prtimes.jp/main/html/rd/p/000000016.000108126.html" target="_blank" rel="noopener"><span class="d">2026.04.08</span><span class="tg">新規事業</span><span class="t">合同会社Growth plus様と連携し、美容製品「NEWTON」の導入を開始しました。</span><span class="ar">↗</span></a>
       <a class="ni" href="https://www.keikyu.co.jp/company/news/2025/20260319HP_25234MK.html" target="_blank" rel="noopener"><span class="d">2026.03.19</span><span class="tg">実績紹介</span><span class="t">京急電鉄｜平和島駅周辺にて、多世代向けシェアモビリティの実証実験を開始しました。</span><span class="ar">↗</span></a>
@@ -220,70 +205,68 @@
   </div>
 </section>
 
-<!-- ============ PHILOSOPHY ============ -->
-<section class="sec" id="phil">
+<!-- ============ お客様の声 ============ -->
+<section class="sec" id="voice">
   <div class="wrap">
-    <span class="eyebrow">Philosophy</span>
-    <p class="stmt" style="margin-top:1.6rem">誰もが持つ、あの時あの場所で得た唯一無二の経験には、必ず誰かの未来を照らすチカラが宿っている。<em class="grad-t">その経験を、次世代へ繋ぐ懸け橋に。</em></p>
+    <div class="shead rv"><span class="label">お客様の声</span><h2 class="h2">支援先の皆様からいただいた声</h2></div>
+    <div class="voices">
+      <div class="vc rv"><span class="q">“</span><p>トヨタで培われた業務改善の視点が、私たちの組織に新しい風を吹き込んでくれました。単なる理論ではなく、現場で即実践できるアプローチが素晴らしかったです。</p><div class="who"><b>製造業 A社</b><span>経営企画部長</span></div></div>
+      <div class="vc rv d1"><span class="q">“</span><p>モビリティサービスの立ち上げにあたり、地域との調整から運用体制まで包括的に支援いただきました。現場を熟知した実践的なアドバイスで、短期間での事業化が実現しました。</p><div class="who"><b>交通事業者 D社</b><span>新規事業担当</span></div></div>
+      <div class="vc rv d2"><span class="q">“</span><p>新規事業の立ち上げに際し、戦略策定から実行支援まで伴走いただきました。豊富な経験に裏打ちされた具体的なアドバイスで、確実に前進できています。</p><div class="who"><b>中堅企業 E社</b><span>新規事業部長</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 理念 ============ -->
+<section class="sec alt" id="phil">
+  <div class="wrap">
+    <div class="shead center rv"><span class="label">私たちの想い</span></div>
+    <p class="phil-msg rv">唯一無二の経験には、<br class="sp">誰かの未来を照らすチカラがある。<br>その経験を、<span class="em">次世代へ繋ぐ懸け橋</span>に。</p>
     <div class="mvv">
-      <div class="cell rv"><span class="k">Mission ／ 使命</span><p class="t">経験と知恵を、次世代へ繋ぐ。</p><p>一人ひとりの唯一無二の経験を、時間と場所の制約を超えて未来へ渡す。その継承の懸け橋となることが、私たちの存在意義です。</p></div>
-      <div class="cell rv" data-d=".1"><span class="k">Vision ／ 目指す姿</span><p class="t">すべての経験が、誰かの未来を照らす社会へ。</p><p>あらゆる経験とノウハウが世代を超えて受け継がれ、次の挑戦者の羅針盤となる。そんな循環をつくることを目指します。</p></div>
-      <div class="cell rv" data-d=".2"><span class="k">Values ／ 価値観</span>
-        <div class="vals">
-          <div><b>現場主義</b><span>机上で終わらせない実践力。答えはいつも現場にある。</span></div>
-          <div><b>伴走</b><span>提案して終わりにしない。結果が出るまで共に走る。</span></div>
-          <div><b>挑戦</b><span>本気の失敗には、価値がある。恐れずに一歩を踏み出す。</span></div>
-        </div>
+      <div class="mv rv"><span class="k">使命（ミッション）</span><p class="t">経験と知恵を、次世代へ繋ぐ。</p><p>一人ひとりの唯一無二の経験を、時間と場所の制約を超えて未来へ渡す。その懸け橋となることが、私たちの存在意義です。</p></div>
+      <div class="mv rv d1"><span class="k">目指す姿（ビジョン）</span><p class="t">すべての経験が、誰かの未来を照らす社会へ。</p><p>あらゆる経験とノウハウが世代を超えて受け継がれ、次の挑戦者の羅針盤となる循環をつくります。</p></div>
+      <div class="mv rv d2"><span class="k">大切にする価値観</span><dl><div><dt>現場主義</dt><dd>机上で終わらせない。答えはいつも現場にある。</dd></div><div><dt>伴走</dt><dd>提案して終わりにしない。結果が出るまで共に走る。</dd></div><div><dt>挑戦</dt><dd>本気の失敗には価値がある。恐れずに一歩を踏み出す。</dd></div></dl></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 代表 ============ -->
+<section class="sec" id="rep">
+  <div class="wrap">
+    <div class="rep rv">
+      <div class="mark" aria-hidden="true">茂</div>
+      <div>
+        <span class="role">代表</span>
+        <p class="name">茂住 雄太</p>
+        <p>トヨタ自動車で現場改善と事業企画・新規事業に携わったのち、独立してRELIGHTを立ち上げました。「絵を描く」だけで終わらせず、現場で成果が出るところまで、お客様と一緒に走ります。</p>
+        <a class="btn sec2" href="about.html">代表紹介を見る <span class="ar">→</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ VOICE ============ -->
-<section class="sec" id="voice" style="padding-top:0">
-  <div class="wrap"><div class="shead"><div><span class="eyebrow">Voice</span><h2 class="h-sec">お客様の声</h2></div><p class="lead rv">現場で即実践できる——支援先の皆様からいただいた声の一部です。</p></div></div>
-  <div class="vwrap">
-    <div class="vrow">
-      <div class="vc"><p>トヨタで培われた業務改善の視点が、私たちの組織に新しい風を吹き込んでくれました。単なる理論ではなく、現場で即実践できるアプローチが素晴らしかったです。</p><div class="who"><i></i><div><b>製造業 A社</b><span>経営企画部長</span></div></div></div>
-      <div class="vc"><p>モビリティサービスの立ち上げにあたり、地域との調整から運用体制まで包括的に支援いただきました。現場を熟知した実践的なアドバイスで、短期間での事業化が実現しました。</p><div class="who"><i></i><div><b>交通事業者 D社</b><span>新規事業担当</span></div></div></div>
-      <div class="vc"><p>セミナーでは、トヨタ生産方式の本質を分かりやすく学べました。知識の伝達ではなく、実務経験に基づいた深い洞察が得られる貴重な機会でした。</p><div class="who"><i></i><div><b>サービス業 C社</b><span>事業部長</span></div></div></div>
-      <div class="vc" aria-hidden="true"><p>トヨタで培われた業務改善の視点が、私たちの組織に新しい風を吹き込んでくれました。単なる理論ではなく、現場で即実践できるアプローチが素晴らしかったです。</p><div class="who"><i></i><div><b>製造業 A社</b><span>経営企画部長</span></div></div></div>
-      <div class="vc" aria-hidden="true"><p>モビリティサービスの立ち上げにあたり、地域との調整から運用体制まで包括的に支援いただきました。現場を熟知した実践的なアドバイスで、短期間での事業化が実現しました。</p><div class="who"><i></i><div><b>交通事業者 D社</b><span>新規事業担当</span></div></div></div>
-      <div class="vc" aria-hidden="true"><p>セミナーでは、トヨタ生産方式の本質を分かりやすく学べました。知識の伝達ではなく、実務経験に基づいた深い洞察が得られる貴重な機会でした。</p><div class="who"><i></i><div><b>サービス業 C社</b><span>事業部長</span></div></div></div>
-    </div>
-    <div class="vrow rev">
-      <div class="vc"><p>モビリティサービスの導入で、利用者目線と運営効率の両立を実現できました。現場の声を丁寧に拾い上げながら、最適な仕組みを構築いただけました。</p><div class="who"><i></i><div><b>不動産管理 D社</b><span>マネージャー</span></div></div></div>
-      <div class="vc"><p>新規事業の立ち上げに際し、戦略策定から実行支援まで伴走いただきました。豊富な経験に裏打ちされた具体的なアドバイスで、確実に前進できています。</p><div class="who"><i></i><div><b>中堅企業 E社</b><span>新規事業部長</span></div></div></div>
-      <div class="vc"><p>組織変革のセミナーは、理論と実践のバランスが絶妙でした。「すぐに現場で活かせる」との声が多く、継続的な学びの機会として定着しています。</p><div class="who"><i></i><div><b>教育機関 F</b><span>人材育成担当</span></div></div></div>
-      <div class="vc" aria-hidden="true"><p>モビリティサービスの導入で、利用者目線と運営効率の両立を実現できました。現場の声を丁寧に拾い上げながら、最適な仕組みを構築いただけました。</p><div class="who"><i></i><div><b>不動産管理 D社</b><span>マネージャー</span></div></div></div>
-      <div class="vc" aria-hidden="true"><p>新規事業の立ち上げに際し、戦略策定から実行支援まで伴走いただきました。豊富な経験に裏打ちされた具体的なアドバイスで、確実に前進できています。</p><div class="who"><i></i><div><b>中堅企業 E社</b><span>新規事業部長</span></div></div></div>
-      <div class="vc" aria-hidden="true"><p>組織変革のセミナーは、理論と実践のバランスが絶妙でした。「すぐに現場で活かせる」との声が多く、継続的な学びの機会として定着しています。</p><div class="who"><i></i><div><b>教育機関 F</b><span>人材育成担当</span></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT + COMPANY ============ -->
+<!-- ============ お問い合わせ・会社概要 ============ -->
 <section class="sec" id="contact" style="padding-top:0">
   <div class="wrap">
-    <div class="cta-blk rv">
-      <span class="eyebrow">Contact</span>
-      <h2 style="margin-top:1.2rem">まずは、<span class="grad-t">お気軽にご相談を。</span></h2>
-      <p>事業のこと、サービスのこと、どんな小さなことでも構いません。一緒に考えるところから始めましょう。</p>
+    <div class="cta rv">
+      <h2>まずは、お気軽にご相談ください。</h2>
+      <p>「何から相談すればいいか分からない」という段階でも大丈夫です。状況をお聞きし、一緒に整理するところから始めます。</p>
       <div class="acts">
-        <a class="btn pri" href="https://mail.google.com/mail/?view=cm&fs=1&to=kanri@mycoach-myteam.com&su=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%88RELIGHT%EF%BC%89" target="_blank" rel="noopener">メールで相談する <span class="ar">↗</span></a>
-        <button type="button" class="btn gho" data-copy="kanri@mycoach-myteam.com">アドレスをコピー</button>
+        <a class="btn w" href="https://mail.google.com/mail/?view=cm&fs=1&to=kanri@mycoach-myteam.com&su=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%EF%BC%88RELIGHT%EF%BC%89" target="_blank" rel="noopener">メールで相談する <span class="ar">→</span></a>
+        <button type="button" class="btn o" data-copy="kanri@mycoach-myteam.com">アドレスをコピー</button>
       </div>
       <a class="mail" href="mailto:kanri@mycoach-myteam.com">kanri@mycoach-myteam.com</a>
     </div>
 
     <div class="co" id="company">
-      <div><span class="eyebrow">Company</span><h2 class="h-sec">会社概要</h2></div>
-      <dl class="rv">
-        <div class="row"><dt>社名</dt><dd>RELIGHT</dd></div>
+      <div class="rv"><span class="label">会社概要</span><h2 class="h2">RELIGHTについて</h2></div>
+      <dl class="rv d1">
+        <div class="row"><dt>名称</dt><dd>RELIGHT（リライト）</dd></div>
         <div class="row"><dt>代表</dt><dd>代表 茂住 雄太</dd></div>
-        <div class="row"><dt>沿革</dt><dd>2026年 設立</dd></div>
+        <div class="row"><dt>設立</dt><dd>2026年</dd></div>
         <div class="row"><dt>所在地</dt><dd>〒165-0023 東京都中野区江原町2-13-13</dd></div>
         <div class="row"><dt>事業内容</dt><dd>営業代行事業（コンサルティング・顧問・展示会ハック）<br>アプリ開発・運営事業</dd></div>
+        <div class="row"><dt>お問い合わせ</dt><dd>kanri@mycoach-myteam.com</dd></div>
       </dl>
     </div>
   </div>
@@ -292,13 +275,12 @@
 
 <footer class="ft">
   <div class="wrap">
-    <div class="ft-word" aria-hidden="true">RELIGHT</div>
-    <div class="ft-bar">
-      <nav><a href="consulting.html">コンサルティング</a><a href="advisory.html">顧問サービス</a><a href="dev.html">アプリ開発・運営</a><a href="about.html">代表メッセージ</a></nav>
-      <span>© 2026 RELIGHT All Rights Reserved.</span>
+    <div class="ft-in">
+      <a href="#top" class="logo" aria-label="RELIGHT トップへ"><span class="wm">REL<span class="ig">I<svg class="flame" viewBox="0 0 24 64" aria-hidden="true"><path d="M12 1C13 26 14.5 28 23 32C14.5 36 13 38 12 63C11 38 9.5 36 1 32C9.5 28 11 26 12 1Z" fill="#8fa8ff"/></svg></span>GHT</span><span class="sub">営業代行・アプリ開発</span></a>
+      <nav aria-label="フッターメニュー"><a href="consulting.html">コンサルティング</a><a href="advisory.html">顧問サービス</a><a href="https://ymozfleet-creator.github.io/tenji-hack/" target="_blank" rel="noopener">展示会ハック</a><a href="dev.html">アプリ開発・運営</a><a href="about.html">代表紹介</a><a href="#contact">お問い合わせ</a></nav>
     </div>
+    <p class="cp">© 2026 RELIGHT All Rights Reserved.</p>
   </div>
 </footer>
-<style>.sp{display:none}@media(max-width:640px){.sp{display:inline}.pc{display:none}}</style>
 </body>
 </html>
