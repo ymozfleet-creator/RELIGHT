@@ -298,3 +298,36 @@ b,strong{color:var(--tx);font-weight:700}
 .fq p{padding:0 1.3rem 1.2rem;font-size:.95rem}
 @media(max-width:900px){.cards3{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}}
 @media(max-width:560px){.cards3{grid-template-columns:1fr}.hero-act.left .btn{width:100%}}
+
+/* ---------- 下層ページ：写真・実績・担当者 ---------- */
+.p-split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.p-fig{margin:0}
+.p-fig img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:20px;box-shadow:0 30px 60px -36px rgba(20,26,38,.55)}
+.p-fig figcaption{margin-top:.7rem;font-size:.82rem;color:var(--mut)}
+.pains{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.pains li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem 1.15rem 3.2rem;position:relative;color:var(--tx);font-weight:700;line-height:1.7}
+.pains li::before{content:"✓";position:absolute;left:1.1rem;top:1.15rem;width:24px;height:24px;border-radius:50%;background:var(--ac);color:#fff;font-size:.8rem;display:grid;place-items:center}
+.case{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.case figure{margin:0;min-height:100%}
+.case figure img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.case-b{padding:clamp(1.6rem,3.5vw,2.4rem);display:flex;flex-direction:column;gap:.8rem}
+.case-tag{font-size:.82rem;font-weight:700;color:var(--ac);letter-spacing:.04em}
+.case-b h3{font-size:clamp(1.12rem,2vw,1.3rem);color:var(--tx);line-height:1.6}
+.case-b p{font-size:.96rem}
+.case-kv{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:.2rem 0 .4rem}
+.case-kv div{background:var(--ac-soft);border-radius:12px;padding:.75rem .8rem}
+.case-kv dt{font-size:.75rem;color:var(--mut);line-height:1.5}
+.case-kv dd{font-family:var(--num);font-weight:700;color:var(--tx);font-size:1.05rem;margin-top:.15rem}
+.case-sub{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.case-sub a{position:relative;display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 3rem 1.2rem 1.3rem;transition:border-color .25s}
+.case-sub a:hover{border-color:var(--ac)}
+.case-sub .d{display:block;font-family:var(--num);font-size:.8rem;color:var(--ac);font-weight:700}
+.case-sub b{display:block;margin-top:.2rem}
+.case-sub small{display:block;color:var(--mut);font-size:.88rem;margin-top:.2rem;line-height:1.7}
+.case-sub .ar{position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);color:var(--ac);font-weight:700}
+.who{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(1.4rem,3vw,2rem)}
+.who dl{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem;margin-bottom:1.2rem}
+.who dt{font-weight:700;color:var(--tx);padding-left:.8rem;border-left:3px solid var(--ac);line-height:1.5}
+.who dd{font-size:.95rem;margin-top:.35rem}
+@media(max-width:900px){.p-split{grid-template-columns:1fr}.case{grid-template-columns:1fr}.case figure img{min-height:0;aspect-ratio:3/2}}
+@media(max-width:640px){.pains,.case-sub,.who dl{grid-template-columns:1fr}.case-kv{grid-template-columns:1fr 1fr 1fr}.case-kv dd{font-size:.95rem}}
